@@ -1,0 +1,10 @@
+[user]
+	name = Harry Day
+	email = contact@harryday.xyz
+[pull]
+	ff = only
+[core]
+	ignorecase = false
+	excludesfile = /Users/harryday/.gitignore
+[alias]
+	co = checkout
