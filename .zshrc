@@ -2,7 +2,7 @@ ZSH_DISABLE_COMPFIX=true
 
 # Alias
 alias cdd='cd ~/Developer/'
-alias cds='cd ~/Developer/School/'
+alias cds='cd ~/Developer/School/year2'
 alias gs='git status'
 alias statusbarfix='xcrun simctl status_bar booted override --time 9:41 --cellularMode active --cellularBars 4 --batteryState charging --operatorName ""'
 
