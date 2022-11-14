@@ -194,6 +194,8 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
+au FileType gitcommit setlocal tw=72
+
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
