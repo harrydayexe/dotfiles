@@ -108,3 +108,6 @@ source $ZSH/oh-my-zsh.sh
 
 path+=('/Users/harryday/.ghcup/bin')
 export PATH
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+source ~/.iterm2_shell_integration.zsh
