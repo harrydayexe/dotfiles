@@ -6,6 +6,7 @@ alias cdt='cd ~/Developer/testing'
 alias cds='cd ~/Developer/School/year2'
 alias gs='git status'
 alias statusbarfix='xcrun simctl status_bar booted override --time 9:41 --cellularMode active --cellularBars 4 --batteryState charging --operatorName ""'
+alias vim='nvim'
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -113,3 +114,5 @@ export PATH
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 source ~/.iterm2_shell_integration.zsh
+export PATH="/usr/local/sbin:$PATH"
+
