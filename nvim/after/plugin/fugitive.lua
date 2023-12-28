@@ -1,0 +1,5 @@
+vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = '[G]it [S]tatus' })
+vim.keymap.set('n', '<leader>glg', function() vim.cmd.Git("lg") end, { desc = '[G]it [L]o[G]' })
+vim.keymap.set('n', '<leader>glg1', function() vim.cmd.Git("lg1") end, { desc = '[G]it [L]o[G][1]' })
+vim.keymap.set('n', '<leader>glg2', function() vim.cmd.Git("lg2") end, { desc = '[G]it [L]o[G][2]' })
+vim.keymap.set('n', '<leader>glg3', function() vim.cmd.Git("lg3") end, { desc = '[G]it [L]o[G][3]' })
