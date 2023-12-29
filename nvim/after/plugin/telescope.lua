@@ -25,6 +25,3 @@ vim.keymap.set('n', '<leader>/', function()
 end, { desc = '[/] Fuzzily search in current buffer' })
 vim.keymap.set('n', '<leader>fs', builtin.live_grep, { desc = '[F]ind by [S]earch' })
 
-require('which-key').register {
-    ['<leader>f'] = { name = '[F]ind', _ = 'which_key_ignore' },
-}
