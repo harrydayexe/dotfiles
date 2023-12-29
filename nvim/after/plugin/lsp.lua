@@ -17,6 +17,7 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', '<leader>vr', vim.lsp.buf.references, create_opts('[V]iew [R]eferences'))
     vim.keymap.set('n', '<leader>er', vim.lsp.buf.rename, create_opts('[R]ename in buffer'))
     vim.keymap.set('n', '<leader>vh', vim.lsp.buf.signature_help, create_opts('[V]iew signature [H]elp'))
+    vim.keymap.set('n', '<leader>ef', vim.lsp.buf.format, { desc = '[F]ormat the current buffer with LSP' })
 
     -- Create a command `:Format` local to the LSP buffer
     vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
