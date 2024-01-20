@@ -13,6 +13,9 @@ vim.keymap.set('n', 'J', 'mzJ`z')
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
+-- Jump to EOF centers cursor
+vim.keymap.set('n', 'G', 'Gzz')
+
 -- Paste over selected text without losing selection
 vim.keymap.set('x', '<Leader>p', '"_dP')
 
