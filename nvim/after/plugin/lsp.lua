@@ -23,6 +23,8 @@ local on_attach = function(_, bufnr)
     vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
         vim.lsp.buf.format()
     end, { desc = 'Format current buffer with LSP' })
+
+    vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
 end
 
 -- mason-lspconfig requires that these setup functions are called in this order
