@@ -116,4 +116,4 @@ export PATH
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 source ~/.iterm2_shell_integration.zsh
 export PATH="/usr/local/sbin:$PATH"
-
+eval "$(zoxide init zsh)"
