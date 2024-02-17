@@ -20,13 +20,20 @@ vim.keymap.set('n', 'G', 'Gzz')
 vim.keymap.set('x', '<Leader>p', '"_dP')
 
 -- yank into system clipboard : asbjornHaland
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], { desc = '[Y]ank to Clipboard' })
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = '[Y]ank to Clipboard' })
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = '[Y]ank line to Clipboard' })
 
 -- delete to void register
-vim.keymap.set({"n", "v"}, "<leader>x", [["_d]], { desc = 'Delete to Void Register' })
+vim.keymap.set({ "n", "v" }, "<leader>x", [["_d]], { desc = 'Delete to Void Register' })
 
 vim.keymap.set("n", "Q", "<nop>")
 
 -- replace current word
-vim.keymap.set("n", "<leader>ec", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace [C]urrent Word' })
+vim.keymap.set("n", "<leader>ec", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+    { desc = 'Replace [C]urrent Word' })
+
+-- Unbind arrow keys
+vim.keymap.set("n", "<Up>", "<nop>")
+vim.keymap.set("n", "<Down>", "<nop>")
+vim.keymap.set("n", "<Left>", "<nop>")
+vim.keymap.set("n", "<Right>", "<nop>")
