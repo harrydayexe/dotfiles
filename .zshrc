@@ -7,6 +7,7 @@ alias cds='cd ~/Developer/School/year2'
 alias gs='git status'
 alias statusbarfix='xcrun simctl status_bar booted override --time 9:41 --cellularMode active --cellularBars 4 --batteryState charging --operatorName ""'
 alias vim='nvim'
+alias cd='z'
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
