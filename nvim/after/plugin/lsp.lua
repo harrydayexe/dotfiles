@@ -48,6 +48,7 @@ local servers = {
             -- diagnostics = { disable = { 'missing-fields' } },
         },
     },
+    htmx = {},
 }
 
 -- Setup neovim lua configuration
