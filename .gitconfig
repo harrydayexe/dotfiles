@@ -20,3 +20,5 @@
     path = .gitconfig-uni
 [advice]
 	addIgnoredFile = false
+[push]
+	autoSetupRemote = true
