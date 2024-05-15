@@ -22,3 +22,5 @@
 	addIgnoredFile = false
 [push]
 	autoSetupRemote = true
+[commit]
+  template = ~/.gitCommitMessageTemplate
