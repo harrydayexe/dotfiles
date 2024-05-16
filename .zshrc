@@ -79,6 +79,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls --color'
+alias l='ls --color -lah'
 alias cdd='cd ~/Developer/'
 alias cdt='cd ~/Developer/testing'
 alias cds='cd ~/Developer/School/year3'
