@@ -32,7 +32,7 @@ ZSH_THEME="af-magic"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -56,7 +56,7 @@ ZSH_THEME="af-magic"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -79,11 +79,30 @@ ZSH_THEME="af-magic"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-history-substring-search zsh-autosuggestions zsh-syntax-highlighting git)
+plugins=(zsh-history-substring-search zsh-autosuggestions zsh-syntax-highlighting git fzf-tab)
+
+# Load completions
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -118,5 +137,4 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 source ~/.iterm2_shell_integration.zsh
 export PATH="/usr/local/sbin:$PATH"
 eval "$(zoxide init zsh)"
-
-neofetch
+eval "$(fzf --zsh)"
