@@ -76,6 +76,14 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:nvim:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:nvim:*' fzf-preview '
+if [[ -d $realpath ]]; then
+    ls --color $realpath
+else
+    cat $realpath
+fi
+'
 
 # Aliases
 alias ls='ls --color'
