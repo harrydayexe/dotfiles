@@ -13,6 +13,10 @@ vim.keymap.set('n', 'J', 'mzJ`z')
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
+-- Override normal C-d and C-u behaviour by keeping cursor centered
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
 -- Jump to EOF centers cursor
 vim.keymap.set('n', 'G', 'Gzz')
 
