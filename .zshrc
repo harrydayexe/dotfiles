@@ -106,5 +106,8 @@ fi
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
+# The Fuck
+eval "$(thefuck --alias)"
+
 source ~/.iterm2_shell_integration.zsh
 
