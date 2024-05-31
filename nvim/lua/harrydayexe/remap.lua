@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = '[P]roject [V]iew' })
+vim.keymap.set("n", "<leader>pv", "<CMD>Oil<CR>", { desc = '[P]roject [V]iew' })
 
 -- Move visual block up or down
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
