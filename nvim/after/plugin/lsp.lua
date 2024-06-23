@@ -7,7 +7,7 @@ local on_attach = function(_, bufnr)
         return { desc = desc, buffer = bufnr, remap = false }
     end
 
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, create_opts('[G]o to [D]eclaration'))
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, create_opts('[G]o to [D]efinition'))
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, create_opts(''))
     vim.keymap.set('n', '<leader>fws', vim.lsp.buf.workspace_symbol, create_opts('[F]ind [W]orkspace [S]ymbol'))
     vim.keymap.set('n', '<leader>dv', vim.diagnostic.open_float, create_opts('[V]iew diagnostics'))
@@ -75,4 +75,17 @@ mason_lspconfig.setup_handlers {
             filetypes = (servers[server_name] or {}).filetypes,
         }
     end,
+}
+
+local sourcekitCapabilities = table.insert(capabilities, {
+    workspace = {
+        didChangeWatchedFiles = {
+            dynamicRegistration = true,
+        },
+    },
+})
+
+require('lspconfig').sourcekit.setup {
+    capabilities = sourcekitCapabilities,
+    on_attach = on_attach,
 }
