@@ -106,23 +106,30 @@ local function toggle_telescope(harpoon_files)
                 local curr_picker = action_state.get_current_picker(prompt_bufnr)
 
                 curr_picker:delete_selection(function(selection)
-                    harpoon:list():removeAt(selection.index)
+                    harpoon:list():remove_at(selection.index)
                 end)
             end)
             -- Move entries up and down with <C-j> and <C-k>
             -- Change the keybinding to your liking
             map({ 'n', 'i' },
-                '<C-j>',
+                '<C-n>',
                 function(prompt_bufnr)
                     move_mark_down(prompt_bufnr, harpoon_files)
                 end
             )
             map({ 'n', 'i' },
-                '<C-k>',
+                '<C-p>',
                 function(prompt_bufnr)
                     move_mark_up(prompt_bufnr, harpoon_files)
                 end
             )
+            -- Clear the harpoon list with <C-c>
+            map({ 'n', 'i' }, '<C-c>', function(prompt_bufnr)
+                harpoon:list():clear()
+
+                local current_picker = action_state.get_current_picker(prompt_bufnr)
+                current_picker:refresh(generate_new_finder(harpoon:list()), {})
+            end)
 
             return true
         end
@@ -132,7 +139,7 @@ end
 vim.keymap.set("n", "<leader>hh", function() toggle_telescope(harpoon:list()) end,
     { desc = "Open [H]arpoon window" })
 
-vim.keymap.set("n", "<leader>ha", function() harpoon:list():append() end, { desc = "[A]ppend current file to harpoon" })
+vim.keymap.set("n", "<leader>ha", function() harpoon:list():add() end, { desc = "[A]ppend current file to harpoon" })
 
 vim.keymap.set("n", "<leader>h1", function() harpoon:list():select(1) end, { desc = "Select [1]st harpoon entry" })
 vim.keymap.set("n", "<leader>h2", function() harpoon:list():select(2) end, { desc = "Select [2]nd harpoon entry" })
