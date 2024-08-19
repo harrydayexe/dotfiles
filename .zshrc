@@ -110,7 +110,7 @@ eval "$(zoxide init --cmd cd zsh)"
 eval "$(thefuck --alias)"
 
 # Add ssh agent
-eval "$(ssh-agent -s)"
+eval "$(ssh-agent -s &>/dev/null)"
 
 source ~/.iterm2_shell_integration.zsh
 
