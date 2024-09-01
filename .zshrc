@@ -12,6 +12,7 @@ eval "$(brew shellenv)"
 PATH="/Users/harryday/.ghcup/bin:$PATH"
 PATH="/Users/harryday/.cabal/bin:$PATH"
 PATH="$(go env GOPATH)/bin:$PATH"
+PATH="/Users/harryday/.cargo/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH
 
