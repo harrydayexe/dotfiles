@@ -34,7 +34,9 @@ require('mason').setup()
 require('mason-lspconfig').setup()
 
 local servers = {
-    clangd = {},
+    clangd = {
+        filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
+    },
     gopls = {},
     pyright = {},
     rust_analyzer = {},
