@@ -2,7 +2,7 @@
 vim.defer_fn(function()
     require('nvim-treesitter.configs').setup {
         -- Add languages to be installed here that you want installed for treesitter
-        ensure_installed =  { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'swift', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
+        ensure_installed = { 'c', 'cpp', 'go', 'helm', 'lua', 'proto', 'python', 'rust', 'swift', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
 
         -- Install parsers synchronously (only applied to `ensure_installed`)
         sync_install = false,
@@ -11,7 +11,7 @@ vim.defer_fn(function()
         -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
         auto_install = true,
 
-        highlight = { 
+        highlight = {
             enable = true,
 
             -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
