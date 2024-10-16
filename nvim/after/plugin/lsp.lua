@@ -9,7 +9,6 @@ local on_attach = function(_, bufnr)
 
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, create_opts('[G]o to [D]efinition'))
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, create_opts(''))
-    vim.keymap.set('n', '<leader>fws', vim.lsp.buf.workspace_symbol, create_opts('[F]ind [W]orkspace [S]ymbol'))
     vim.keymap.set('n', '<leader>dv', vim.diagnostic.open_float, create_opts('[V]iew diagnostics'))
     vim.keymap.set('n', '<leader>d[', vim.diagnostic.goto_prev, create_opts('Jump to previous diagnostic'))
     vim.keymap.set('n', '<leader>d]', vim.diagnostic.goto_next, create_opts('Jump to next diagnostic'))
