@@ -52,6 +52,7 @@ pcall(require('telescope').load_extension, 'fzf')
 
 
 local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = '[B]uffers' })
 vim.keymap.set('n', '<leader>fp', builtin.find_files, { desc = '[F]ind [P]roject files' })
 vim.keymap.set('n', '<leader>fg', builtin.git_files, { desc = '[F]ind [G]it files' })
 vim.keymap.set('n', '<leader>fws', builtin.lsp_dynamic_workspace_symbols, { desc = '[F]ind [W]orkspace [S]ymbol' })
