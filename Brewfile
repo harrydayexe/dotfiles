@@ -38,6 +38,7 @@ brew "k9s"
 brew "libheif"
 brew "libraw"
 brew "llvm"
+brew "mas"
 brew "protobuf"
 brew "mysql"
 brew "neovim"
@@ -58,15 +59,31 @@ brew "zoxide"
 brew "sass/sass/sass"
 brew "siderolabs/tap/talosctl"
 cask "balenaetcher"
-cask "basictex"
 cask "dbeaver-community"
 cask "docker"
-cask "gcc-arm-embedded"
 cask "iterm2"
+cask "microsoft-auto-update"
+cask "microsoft-teams"
 cask "mongodb-compass"
 cask "qflipper"
 cask "raspberry-pi-imager"
 cask "slack"
+mas "Affinity Designer", id: 824171161
+mas "Affinity Photo", id: 824183456
+mas "Boop", id: 1518425043
+mas "Compressor", id: 424390742
+mas "CustomSymbols", id: 1566662030
+mas "Developer", id: 640199958
+mas "Final Cut Pro", id: 424389933
+mas "Goodnotes", id: 1444383602
+mas "Keynote", id: 409183694
+mas "Logic Pro", id: 634148309
+mas "Motion", id: 434290957
+mas "NordVPN", id: 905953485
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Timery", id: 1425368544
+mas "Xcode", id: 497799835
 vscode "adpyke.codesnap"
 vscode "alefragnani.bookmarks"
 vscode "bmewburn.vscode-intelephense-client"
