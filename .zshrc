@@ -95,7 +95,7 @@ alias cds='cd ~/Developer/School/year3'
 alias gs='git status'
 alias statusbarfix='xcrun simctl status_bar booted override --time 9:41 --cellularMode active --cellularBars 4 --batteryState charging --operatorName ""'
 alias vim='nvim'
-alias tree='tree -C --gitignore'
+alias tree='tree -C --gitignore -a -I ".git"'
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
