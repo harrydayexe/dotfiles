@@ -5,16 +5,17 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Homebrew
-eval "$(brew shellenv)"
-
 # Path setup
+PATH=/opt/homebrew/bin:$PATH
 PATH="/Users/harryday/.ghcup/bin:$PATH"
 PATH="/Users/harryday/.cabal/bin:$PATH"
 PATH="$(go env GOPATH)/bin:$PATH"
 PATH="/Users/harryday/.cargo/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
+PATH="/usr/local/sbin:$PATH"
 export PATH
+
+# Homebrew
+eval "$(brew shellenv)"
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -115,12 +116,12 @@ eval "$(thefuck --alias)"
 eval "$(ssh-agent -s &>/dev/null)"
 
 # NVM integrations
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Set LS COLORS
 export LSCOLORS="ExFxBxDxCxegedabagacad"
 
 source ~/.iterm2_shell_integration.zsh
 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

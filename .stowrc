@@ -1,0 +1,2 @@
+--target=~/
+stow -t ~/.config nvim

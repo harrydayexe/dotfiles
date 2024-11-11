@@ -3,7 +3,6 @@ tap "homebrew/bundle"
 tap "homebrew/services"
 tap "sass/sass"
 tap "siderolabs/tap"
-brew "python@3.12"
 brew "glib"
 brew "harfbuzz"
 brew "zstd"
@@ -27,7 +26,6 @@ brew "tesseract"
 brew "ffmpeg"
 brew "fzf"
 brew "gcc"
-brew "gdb"
 brew "ghostscript"
 brew "go"
 brew "golang-migrate"
@@ -42,11 +40,11 @@ brew "mas"
 brew "protobuf"
 brew "mysql"
 brew "neovim"
-brew "nvm"
 brew "openblas"
 brew "openjdk@17"
 brew "openssh"
 brew "pandoc"
+brew "python@3.12"
 brew "ripgrep"
 brew "rust"
 brew "sqlc"
@@ -88,7 +86,9 @@ mas "Compressor", id: 424390742
 mas "CustomSymbols", id: 1566662030
 mas "Developer", id: 640199958
 mas "Final Cut Pro", id: 424389933
+mas "GarageBand", id: 682658836
 mas "Goodnotes", id: 1444383602
+mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Logic Pro", id: 634148309
 mas "Motion", id: 434290957
