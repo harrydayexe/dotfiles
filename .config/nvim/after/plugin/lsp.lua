@@ -41,7 +41,6 @@ local servers = {
     rust_analyzer = {},
     ts_ls = {},
     html = { filetypes = { 'html', 'twig', 'hbs' } },
-    hdl_checker = {},
     lua_ls = {
         Lua = {
             workspace = { checkThirdParty = false },
