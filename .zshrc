@@ -12,6 +12,7 @@ PATH="/Users/harryday/.cabal/bin:$PATH"
 PATH="$(go env GOPATH)/bin:$PATH"
 PATH="/Users/harryday/.cargo/bin:$PATH"
 PATH="/usr/local/sbin:$PATH"
+PATH="/opt/homebrew/opt/python@3.13/libexec/bin:$PATH"
 export PATH
 
 # Homebrew
