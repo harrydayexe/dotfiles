@@ -56,6 +56,7 @@ vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = '[B]uffers' })
 vim.keymap.set('n', '<leader>fp', builtin.find_files, { desc = '[F]ind [P]roject files' })
 vim.keymap.set('n', '<leader>fg', builtin.git_files, { desc = '[F]ind [G]it files' })
 vim.keymap.set('n', '<leader>fws', builtin.lsp_dynamic_workspace_symbols, { desc = '[F]ind [W]orkspace [S]ymbol' })
+vim.keymap.set('n', '<leader>db', builtin.diagnostics, { desc = '[D]iagnostics in [B]uffer' })
 vim.keymap.set('n', '<leader>/', function()
     -- You can pass additional configuration to telescope to change theme, layout, etc.
     require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
