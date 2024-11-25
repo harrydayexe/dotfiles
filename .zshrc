@@ -6,12 +6,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Path setup
-PATH=/opt/homebrew/bin:$PATH
-PATH="/Users/harryday/.ghcup/bin:$PATH"
-PATH="/Users/harryday/.cabal/bin:$PATH"
+PATH="/opt/homebrew/bin:$PATH"
 PATH="$(go env GOPATH)/bin:$PATH"
-PATH="/Users/harryday/.cargo/bin:$PATH"
-PATH="/usr/local/sbin:$PATH"
+PATH="$HOME/.cargo/bin:$PATH"
 PATH="/opt/homebrew/opt/python@3.13/libexec/bin:$PATH"
 export PATH
 
