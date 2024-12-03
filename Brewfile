@@ -23,43 +23,47 @@ brew "leptonica"
 brew "libass"
 brew "pango"
 brew "tesseract"
-brew "ffmpeg"
-brew "fzf"
+brew "ffmpeg@6"
 brew "gcc"
+brew "fzf"
 brew "ghostscript"
 brew "go"
 brew "golang-migrate"
 brew "hdf5"
 brew "helm"
-brew "jq"
-brew "k9s"
 brew "libheif"
 brew "libraw"
+brew "jdtls"
+brew "jq"
+brew "k9s"
 brew "llvm"
 brew "mas"
 brew "protobuf"
 brew "mysql"
+brew "tree-sitter"
 brew "neovim"
 brew "openblas"
 brew "openjdk@17"
 brew "openssh"
 brew "pandoc"
-brew "python@3.12"
 brew "ripgrep"
-brew "rust"
+brew "rustup"
 brew "sqlc"
 brew "stow"
 brew "swift-format"
 brew "thefuck"
 brew "tree"
 brew "uncrustify"
+brew "vips"
+brew "watch"
 brew "zoxide"
 brew "sass/sass/sass"
 brew "siderolabs/tap/talosctl"
 cask "balenaetcher"
+cask "chatgpt"
 cask "dbeaver-community"
 cask "discord"
-cask "docker"
+cask "font-jetbrains-mono-nerd-font"
 cask "google-chrome"
 cask "iterm2"
 cask "jetbrains-toolbox"
@@ -81,7 +85,9 @@ cask "wwdc"
 cask "zoom"
 mas "Affinity Designer", id: 824171161
 mas "Affinity Photo", id: 824183456
+mas "Balatro+", id: 6502451661
 mas "Boop", id: 1518425043
+mas "Bridge Constructor+", id: 1587908263
 mas "Compressor", id: 424390742
 mas "CustomSymbols", id: 1566662030
 mas "Developer", id: 640199958
@@ -91,8 +97,12 @@ mas "Goodnotes", id: 1444383602
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Logic Pro", id: 634148309
+mas "Mini Motorways", id: 1456188526
 mas "Motion", id: 434290957
 mas "Numbers", id: 409203825
+mas "Outlanders 2", id: 1614682164
 mas "Pages", id: 409201541
 mas "Timery", id: 1425368544
+mas "WHAT THE CAR?", id: 1534708672
 mas "Xcode", id: 497799835
+mas "‎WhatsApp", id: 310633997
