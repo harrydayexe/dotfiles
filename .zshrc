@@ -10,6 +10,7 @@ PATH="/opt/homebrew/bin:$PATH"
 PATH="$(go env GOPATH)/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
 PATH="/opt/homebrew/opt/python@3.13/libexec/bin:$PATH"
+PATH="/opt/homebrew/opt/ffmpeg@6/bin:$PATH"
 export PATH
 
 # Homebrew
