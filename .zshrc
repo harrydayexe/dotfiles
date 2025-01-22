@@ -96,6 +96,8 @@ alias gs='git status'
 alias statusbarfix='xcrun simctl status_bar booted override --time 9:41 --cellularMode active --cellularBars 4 --batteryState charging --operatorName ""'
 alias vim='nvim'
 alias tree='tree -C --gitignore -a -I ".git"'
+alias kctl='kubectl'
+alias tctl='talosctl'
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
