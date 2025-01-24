@@ -11,6 +11,7 @@ PATH="$(go env GOPATH)/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
 PATH="/opt/homebrew/opt/python@3.13/libexec/bin:$PATH"
 PATH="/opt/homebrew/opt/ffmpeg@6/bin:$PATH"
+PATH="/opt/homebrew/opt/mysql@8.4/bin:$PATH"
 export PATH
 
 # Homebrew
@@ -58,6 +59,8 @@ zinit cdreplay -q
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
+bindkey "^[^[[D" backward-word
+bindkey "^[^[[C" forward-word
 
 # History
 HISTSIZE=5000
