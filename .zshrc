@@ -101,6 +101,7 @@ alias vim='nvim'
 alias tree='tree -C --gitignore -a -I ".git"'
 alias kctl='kubectl'
 alias tctl='talosctl'
+alias exportenv='export $(grep -v '^#' .env | xargs)'
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
