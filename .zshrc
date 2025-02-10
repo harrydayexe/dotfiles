@@ -102,6 +102,8 @@ alias tree='tree -C --gitignore -a -I ".git"'
 alias kctl='kubectl'
 alias tctl='talosctl'
 alias exportenv='export $(grep -v '^#' .env | xargs)'
+alias dcu='docker-compose up -d'
+alias dcd='docker-compose down'
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
