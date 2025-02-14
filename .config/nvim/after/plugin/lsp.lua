@@ -53,6 +53,7 @@ local servers = {
         },
     },
     htmx = {},
+    texlab = {},
 }
 
 -- Setup neovim lua configuration

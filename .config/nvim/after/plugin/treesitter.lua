@@ -4,6 +4,9 @@ vim.defer_fn(function()
         -- Add languages to be installed here that you want installed for treesitter
         ensure_installed = { 'c', 'cpp', 'go', 'helm', 'lua', 'proto', 'python', 'rust', 'swift', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
 
+
+        ignore_install = {},
+
         -- Install parsers synchronously (only applied to `ensure_installed`)
         sync_install = false,
 
@@ -19,6 +22,7 @@ vim.defer_fn(function()
             -- Using this option may slow down your editor, and you may see some duplicate highlights.
             -- Instead of true it can also be a list of languages
             additional_vim_regex_highlighting = false,
+            disable = { 'latex' }
         },
         indent = { enable = true },
     }
