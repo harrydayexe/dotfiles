@@ -40,10 +40,8 @@ local servers = {
             },
         }
     },
-    pyright = {},
-    rust_analyzer = {},
-    ts_ls = {},
     html = { filetypes = { 'html', 'twig', 'hbs' } },
+    htmx = {},
     lua_ls = {
         Lua = {
             workspace = { checkThirdParty = false },
@@ -52,8 +50,11 @@ local servers = {
             -- diagnostics = { disable = { 'missing-fields' } },
         },
     },
-    htmx = {},
+    pyright = {},
+    rust_analyzer = {},
+    tailwindcss = {},
     texlab = {},
+    ts_ls = {},
 }
 
 -- Setup neovim lua configuration
