@@ -42,10 +42,11 @@ cmp.setup {
         -- end, { 'i', 's' }),
     },
     sources = {
+        { name = "luasnip", priority = 1000 },
         { name = "nvim_lsp" },
         { name = "buffer" },
         { name = "path" },
-        { name = "luasnip" },
         { name = "nvim_lua" },
-    }
+    },
+    preselect = cmp.PreselectMode.None
 }
