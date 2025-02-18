@@ -199,14 +199,17 @@ ls.add_snippets("go", {
         "efi",
         fmta(
             [[
-<val>, <err> := <f>(<args>)
+<val><err> := <f>(<args>)
 if <err_same> != nil {
 	return <result>
 }
 <finish>
 ]],
             {
-                val = i(1),
+                val = c(1, {
+                    sn(nil, { i(1, "val"), t(", ") }), -- Default: val with comma (comma stays if val is edited)
+                    t(""),                             -- Second option: no val, no comma
+                }),
                 err = i(2, "err"),
                 f = i(3),
                 args = i(4),
