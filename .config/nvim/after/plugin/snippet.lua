@@ -21,7 +21,7 @@ vim.keymap.set({ 'i', 's' }, '<c-j>', function()
     end
 end, { silent = true, desc = 'Expand or [J]ump snippet' })
 
-vim.keymap.set({ 'i', 's' }, '<c-u>', function()
+vim.keymap.set({ 'i', 's' }, '<c-k>', function()
     if ls.jumpable(-1) then
         ls.jump(-1)
     end
