@@ -221,3 +221,63 @@ if <err_same> != nil {
     ),
     s("ie", fmta("if err != nil {\n\treturn <err>\n}", { err = i(1, "err") })),
 })
+
+ls.add_snippets("tex", {
+    s(
+        "doc",
+        fmta(
+            [[
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath} % Required for some math elements
+\usepackage{amssymb} % Required for some math symbols
+\usepackage{natbib} % Required for bibliography
+\usepackage[none]{hyphenat} % Prevents hyphenation
+\bibliographystyle{agsm} % Sets the bibliography style
+\usepackage{pgfplots} % Required for plotting
+\usepackage{pgfplotstable} % For loading CSV files
+\pgfplotsset{compat=1.18} % Ensures compatibility
+\usepgfplotslibrary{external} % For externalising plots
+\usepackage[a4paper, total={6in, 9in}]{geometry}
+\usepackage{subcaption}  % Allows labeled subfigures
+\usepackage{fancyhdr} % Required for custom headers
+\pagestyle{fancy} % Set the page style to use the fancy headers
+
+% Clear all header and footer fields
+\fancyhf{}
+
+% Redefine \sectionmark to update the header with the current section name.
+\renewcommand{\sectionmark}[1]{%
+  \markright{\thesection\quad#1}%
+}
+
+% Place the current section name in the header on even (left) and odd (right) pages.
+\fancyhead[L]{\nouppercase{\rightmark}}
+% Place the page number in the center of the footer on every page
+\fancyfoot[C]{\thepage}
+
+
+\title{<title>}
+\author{Harry Day}
+\date{<date>}
+
+\begin{document}
+
+\maketitle
+
+\section{<sectiontitle>}
+<section>
+
+\bibliography{ref}
+
+\end{document}
+]],
+            {
+                title = i(1, "Title"),
+                date = i(2, "Date"),
+                sectiontitle = i(3, "Section Title"),
+                section = i(4, ""),
+            }
+        )
+    )
+})
