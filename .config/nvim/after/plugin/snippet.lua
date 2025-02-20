@@ -261,6 +261,8 @@ ls.add_snippets("tex", {
 \author{Harry Day}
 \date{<date>}
 
+<toc>
+
 \begin{document}
 
 \maketitle
@@ -275,8 +277,12 @@ ls.add_snippets("tex", {
             {
                 title = i(1, "Title"),
                 date = i(2, "Date"),
-                sectiontitle = i(3, "Section Title"),
-                section = i(4, ""),
+                toc = c(3, {
+                    t("\\tableofcontents"),
+                    t(""),
+                }),
+                sectiontitle = i(4, "Section Title"),
+                section = i(5, ""),
             }
         )
     )
