@@ -17,4 +17,6 @@ require('which-key').add {
     { "<leader>p_",  hidden = true },
     { "<leader>v",   group = "[V]iew" },
     { "<leader>v_",  hidden = true },
+    { "<leader>c",   group = "[C]arbon",             mode = "v" },
+    { "<leader>c_",  hidden = true,                  mode = "v" },
 }

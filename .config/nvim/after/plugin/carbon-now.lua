@@ -19,4 +19,4 @@ require("carbon-now").setup({
     },
 })
 
-vim.keymap.set("v", "<leader>cn", ":CarbonNow<CR>", { silent = true })
+vim.keymap.set("v", "<leader>cn", ":CarbonNow<CR>", { desc = "[C]arbon [N]ow", silent = true })
