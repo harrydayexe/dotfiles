@@ -84,13 +84,13 @@ mason_lspconfig.setup_handlers {
     end,
 }
 
-local sourcekitCapabilities = table.insert(capabilities, {
-    workspace = {
-        didChangeWatchedFiles = {
-            dynamicRegistration = true,
-        },
+local sourcekitCapabilities = vim.lsp.protocol.make_client_capabilities()
+sourcekitCapabilities = require('cmp_nvim_lsp').default_capabilities(sourcekitCapabilities)
+sourcekitCapabilities.workspace = {
+    didChangeWatchedFiles = {
+        dynamicRegistration = true,
     },
-})
+}
 
 require('lspconfig').sourcekit.setup {
     capabilities = sourcekitCapabilities,
@@ -103,6 +103,11 @@ require('lspconfig').pbls.setup {
     on_attach = on_attach,
 }
 
+capabilities.offsetEncoding = { 'utf-16' }
+
 require("lspconfig").clangd.setup {
-    cmd = { "clangd", "--enable-config" }
+    capabilities = capabilities,
+    on_attach = on_attach,
+    cmd = { "clangd", "--enable-config" },
+    filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'proto' },
 }
