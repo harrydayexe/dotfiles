@@ -33,6 +33,7 @@ require('mason').setup()
 require('mason-lspconfig').setup()
 
 local servers = {
+    clangd = {},
     gopls = {
         settings = {
             gopls = {
@@ -58,6 +59,7 @@ local servers = {
 }
 
 -- Setup neovim lua configuration
+-- WARNING: This might need to be changed to lazydev
 require('neodev').setup()
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
@@ -93,9 +95,14 @@ local sourcekitCapabilities = table.insert(capabilities, {
 require('lspconfig').sourcekit.setup {
     capabilities = sourcekitCapabilities,
     on_attach = on_attach,
+    filetypes = { 'swift' },
 }
 
 require('lspconfig').pbls.setup {
     capabilities = capabilities,
     on_attach = on_attach,
+}
+
+require("lspconfig").clangd.setup {
+    cmd = { "clangd", "--enable-config" }
 }
