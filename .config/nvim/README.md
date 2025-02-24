@@ -1,8 +1,8 @@
-# dotfiles/nvim
+# dotfiles/.config/nvim
 
-<a href="https://dotfyle.com/harrydayexe/dotfiles-nvim"><img src="https://dotfyle.com/harrydayexe/dotfiles-nvim/badges/plugins?style=flat" /></a>
-<a href="https://dotfyle.com/harrydayexe/dotfiles-nvim"><img src="https://dotfyle.com/harrydayexe/dotfiles-nvim/badges/leaderkey?style=flat" /></a>
-<a href="https://dotfyle.com/harrydayexe/dotfiles-nvim"><img src="https://dotfyle.com/harrydayexe/dotfiles-nvim/badges/plugin-manager?style=flat" /></a>
+<a href="https://dotfyle.com/harrydayexe/dotfiles-config-nvim"><img src="https://dotfyle.com/harrydayexe/dotfiles-config-nvim/badges/plugins?style=flat" /></a>
+<a href="https://dotfyle.com/harrydayexe/dotfiles-config-nvim"><img src="https://dotfyle.com/harrydayexe/dotfiles-config-nvim/badges/leaderkey?style=flat" /></a>
+<a href="https://dotfyle.com/harrydayexe/dotfiles-config-nvim"><img src="https://dotfyle.com/harrydayexe/dotfiles-config-nvim/badges/plugin-manager?style=flat" /></a>
 
 
 ## Install Instructions
@@ -13,13 +13,12 @@ Clone the repository and install the plugins:
 
 ```sh
 git clone git@github.com:harrydayexe/dotfiles ~/.config/harrydayexe/dotfiles
-NVIM_APPNAME=harrydayexe/dotfiles/nvim nvim --headless +"Lazy! sync" +qa
 ```
 
 Open Neovim with this config:
 
 ```sh
-NVIM_APPNAME=harrydayexe/dotfiles/nvim nvim
+NVIM_APPNAME=harrydayexe/dotfiles/.config/nvim nvim
 ```
 
 ## Plugins
@@ -27,18 +26,35 @@ NVIM_APPNAME=harrydayexe/dotfiles/nvim nvim
 ### colorscheme
 
 + [olimorris/onedarkpro.nvim](https://dotfyle.com/plugins/olimorris/onedarkpro.nvim)
++ [catppuccin/nvim](https://dotfyle.com/plugins/catppuccin/nvim)
++ [folke/tokyonight.nvim](https://dotfyle.com/plugins/folke/tokyonight.nvim)
++ [rose-pine/neovim](https://dotfyle.com/plugins/rose-pine/neovim)
+### colorscheme-switchers
+
++ [zaldih/themery.nvim](https://dotfyle.com/plugins/zaldih/themery.nvim)
 ### comment
 
 + [numToStr/Comment.nvim](https://dotfyle.com/plugins/numToStr/Comment.nvim)
++ [folke/todo-comments.nvim](https://dotfyle.com/plugins/folke/todo-comments.nvim)
 ### completion
 
 + [hrsh7th/nvim-cmp](https://dotfyle.com/plugins/hrsh7th/nvim-cmp)
+### editing-support
+
++ [m4xshen/autoclose.nvim](https://dotfyle.com/plugins/m4xshen/autoclose.nvim)
+### file-explorer
+
++ [stevearc/oil.nvim](https://dotfyle.com/plugins/stevearc/oil.nvim)
 ### fuzzy-finder
 
 + [nvim-telescope/telescope.nvim](https://dotfyle.com/plugins/nvim-telescope/telescope.nvim)
-### indent
+### git
 
-+ [lukas-reineke/indent-blankline.nvim](https://dotfyle.com/plugins/lukas-reineke/indent-blankline.nvim)
++ [lewis6991/gitsigns.nvim](https://dotfyle.com/plugins/lewis6991/gitsigns.nvim)
+### icon
+
++ [echasnovski/mini.icons](https://dotfyle.com/plugins/echasnovski/mini.icons)
++ [nvim-tree/nvim-web-devicons](https://dotfyle.com/plugins/nvim-tree/nvim-web-devicons)
 ### keybinding
 
 + [folke/which-key.nvim](https://dotfyle.com/plugins/folke/which-key.nvim)
@@ -57,24 +73,25 @@ NVIM_APPNAME=harrydayexe/dotfiles/nvim nvim
 + [ThePrimeagen/harpoon](https://dotfyle.com/plugins/ThePrimeagen/harpoon)
 ### nvim-dev
 
-+ [folke/neodev.nvim](https://dotfyle.com/plugins/folke/neodev.nvim)
 + [nvim-lua/plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
++ [folke/neodev.nvim](https://dotfyle.com/plugins/folke/neodev.nvim)
 ### plugin-manager
 
 + [folke/lazy.nvim](https://dotfyle.com/plugins/folke/lazy.nvim)
 ### snippet
 
 + [L3MON4D3/LuaSnip](https://dotfyle.com/plugins/L3MON4D3/LuaSnip)
-+ [rafamadriz/friendly-snippets](https://dotfyle.com/plugins/rafamadriz/friendly-snippets)
++ [ellisonleao/carbon-now.nvim](https://dotfyle.com/plugins/ellisonleao/carbon-now.nvim)
 ### statusline
 
 + [nvim-lualine/lualine.nvim](https://dotfyle.com/plugins/nvim-lualine/lualine.nvim)
 ### syntax
 
-+ [nvim-treesitter/nvim-treesitter-textobjects](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter-textobjects)
 + [nvim-treesitter/nvim-treesitter](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter)
++ [nvim-treesitter/nvim-treesitter-textobjects](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter-textobjects)
 ## Language Servers
 
++ clangd
 + html
 
 
