@@ -19,4 +19,6 @@ require('which-key').add {
     { "<leader>v_",  hidden = true },
     { "<leader>c",   group = "[C]arbon",             mode = "v" },
     { "<leader>c_",  hidden = true,                  mode = "v" },
+    { "<leader>c",   group = "[C]opilot" },
+    { "<leader>c_",  hidden = true },
 }
