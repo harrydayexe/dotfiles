@@ -102,7 +102,7 @@ vim.keymap.set("n", "<leader>fos",
 
 -- create a new note
 -- Define a function to create a vertical split, prompt for input, and run the command
-function new_obsidian_note()
+local function new_obsidian_note()
     -- Prompt for input
     local input = vim.fn.input("Enter file name: ")
     if input == nil or input == "" then
@@ -127,7 +127,7 @@ function new_obsidian_note()
     vim.cmd("vsplit " .. vim.fn.fnameescape(file_path))
 end
 
-vim.api.nvim_create_user_command("ObsidianNewNote", "lua new_obsidian_note()", {})
+vim.api.nvim_create_user_command("ObsidianNewNote", new_obsidian_note, {})
 
 -- Map the function to a keybinding (for example, <Leader>o in normal mode)
 vim.api.nvim_set_keymap('n', '<Leader>on', ':ObsidianNewNote<CR>',
