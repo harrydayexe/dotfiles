@@ -88,7 +88,9 @@ vim.keymap.set("n", "<leader>ok",
     "<cmd>!mv '%:p' /Users/harryday/library/Mobile\\ Documents/iCloud~md~obsidian/Documents/harrydayexe/zettelkasten<cr><cmd>bd<cr>",
     { desc = "[O]bsidian O[K]ay" })
 -- delete file in current buffer
-vim.keymap.set("n", "<leader>odd", "<cmd>!rm '%:p'<cr><cmd>bd<cr>", { desc = "[O]bsidian [D]elete [D]ocument" })
+vim.keymap.set("n", "<leader>od", "<Nop>", { desc = "[O]bsidian [D]elete [D]ocument", silent = true })
+vim.keymap.set("n", "<leader>odd", "<cmd>!rm '%:p'<cr><cmd>bd<cr>",
+    { desc = "[O]bsidian [D]elete [D]ocument" })
 
 -- search for files in full vault
 vim.keymap.set("n", "<leader>fop",
@@ -100,7 +102,7 @@ vim.keymap.set("n", "<leader>fos",
 
 -- create a new note
 -- Define a function to create a vertical split, prompt for input, and run the command
-function run_on_command()
+function new_obsidian_note()
     -- Prompt for input
     local input = vim.fn.input("Enter file name: ")
     if input == nil or input == "" then
@@ -125,6 +127,8 @@ function run_on_command()
     vim.cmd("vsplit " .. vim.fn.fnameescape(file_path))
 end
 
+vim.api.nvim_create_user_command("ObsidianNewNote", "lua new_obsidian_note()", {})
+
 -- Map the function to a keybinding (for example, <Leader>o in normal mode)
-vim.api.nvim_set_keymap('n', '<Leader>on', ':lua run_on_command()<CR>',
+vim.api.nvim_set_keymap('n', '<Leader>on', ':ObsidianNewNote<CR>',
     { desc = "[O]bsidian [N]ote", noremap = true, silent = true })
