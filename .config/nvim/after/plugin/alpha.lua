@@ -38,3 +38,33 @@ alpha.setup(dashboard.opts)
 vim.cmd([[
     autocmd FileType alpha setlocal nofoldenable
 ]])
+
+-- Create an augroup for the autocommand
+vim.api.nvim_create_augroup("AlphaOnEmpty", { clear = true })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+    group = "AlphaOnEmpty",
+    callback = function()
+        -- Get a list of all listed buffers
+        local bufs = vim.fn.getbufinfo({ buflisted = 1 })
+        -- If there's only one listed buffer and it has no name,
+        -- assume it's the empty buffer left after deleting everything.
+        if #bufs == 2 and bufs[2].name == "" then
+            -- require("alpha").start(true)
+            vim.cmd("Alpha")
+        end
+    end,
+})
+
+function dump(o)
+    if type(o) == 'table' then
+        local s = '{ '
+        for k, v in pairs(o) do
+            if type(k) ~= 'number' then k = '"' .. k .. '"' end
+            s = s .. '[' .. k .. '] = ' .. dump(v) .. ','
+        end
+        return s .. '} '
+    else
+        return tostring(o)
+    end
+end
