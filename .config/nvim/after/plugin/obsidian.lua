@@ -89,7 +89,7 @@ vim.keymap.set("n", "<leader>ok",
     { desc = "[O]bsidian O[K]ay" })
 -- delete file in current buffer
 vim.keymap.set("n", "<leader>od", "<Nop>", { desc = "[O]bsidian [D]elete [D]ocument", silent = true })
-vim.keymap.set("n", "<leader>odd", "<cmd>!rm '%:p'<cr><cmd>bd<cr>",
+vim.keymap.set("n", "<leader>odd", "<cmd>!rm '%:p'<cr><cmd>Bdelete<cr>",
     { desc = "[O]bsidian [D]elete [D]ocument" })
 
 -- search for files in full vault

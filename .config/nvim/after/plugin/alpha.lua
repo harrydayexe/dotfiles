@@ -40,31 +40,16 @@ vim.cmd([[
 ]])
 
 -- Create an augroup for the autocommand
-vim.api.nvim_create_augroup("AlphaOnEmpty", { clear = true })
-
-vim.api.nvim_create_autocmd("BufEnter", {
-    group = "AlphaOnEmpty",
+vim.api.nvim_create_augroup("alpha_on_empty", { clear = true })
+vim.api.nvim_create_autocmd("User", {
+    pattern = "BDeletePre *",
+    group = "alpha_on_empty",
     callback = function()
-        -- Get a list of all listed buffers
-        local bufs = vim.fn.getbufinfo({ buflisted = 1 })
-        -- If there's only one listed buffer and it has no name,
-        -- assume it's the empty buffer left after deleting everything.
-        if #bufs == 2 and bufs[2].name == "" then
-            -- require("alpha").start(true)
-            vim.cmd("Alpha")
+        local bufnr = vim.api.nvim_get_current_buf()
+        local name = vim.api.nvim_buf_get_name(bufnr)
+
+        if name == "" then
+            vim.cmd([[:Alpha | bd#]])
         end
     end,
 })
-
-function dump(o)
-    if type(o) == 'table' then
-        local s = '{ '
-        for k, v in pairs(o) do
-            if type(k) ~= 'number' then k = '"' .. k .. '"' end
-            s = s .. '[' .. k .. '] = ' .. dump(v) .. ','
-        end
-        return s .. '} '
-    else
-        return tostring(o)
-    end
-end
