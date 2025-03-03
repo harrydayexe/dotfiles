@@ -21,4 +21,6 @@ require('which-key').add {
     { "<leader>c_",  hidden = true,                  mode = "v" },
     { "<leader>c",   group = "[C]opilot" },
     { "<leader>c_",  hidden = true },
+    { "<leader>o",   group = "[O]bsidian" },
+    { "<leader>o_",  hidden = true },
 }

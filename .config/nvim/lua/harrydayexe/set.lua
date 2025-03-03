@@ -29,6 +29,8 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 vim.opt.splitright = true
 
+vim.opt.conceallevel = 1
+
 -- Colors are applied automatically based on user-defined highlight groups.
 -- There is no default value.
 vim.cmd.highlight('IndentLine guifg=#123456')

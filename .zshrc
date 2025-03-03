@@ -12,6 +12,7 @@ PATH="$HOME/.cargo/bin:$PATH"
 PATH="/opt/homebrew/opt/python@3.13/libexec/bin:$PATH"
 PATH="/opt/homebrew/opt/ffmpeg@6/bin:$PATH"
 PATH="/opt/homebrew/opt/mysql@8.4/bin:$PATH"
+PATH="$HOME/Developer/dotfiles/bin:$PATH"
 export PATH
 
 # Homebrew
@@ -104,6 +105,8 @@ alias tctl='talosctl'
 alias exportenv='export $(grep -v '^#' .env | xargs)'
 alias dcu='docker-compose up -d'
 alias dcd='docker-compose down'
+alias or='vim $HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/harrydayexe/inbox/*.md'
+alias oo='cd $HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/harrydayexe'
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then

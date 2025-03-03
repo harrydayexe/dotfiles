@@ -42,6 +42,8 @@ vim.keymap.set('n', "<leader><leader>s", "<cmd>source ~/.config/nvim/after/plugi
 -- This is pretty useful if you're trying to do something a bit
 -- more complicated or just exploring random snippet ideas
 require("luasnip.session.snippet_collection").clear_snippets "go"
+require("luasnip.session.snippet_collection").clear_snippets "tex"
+require("luasnip.session.snippet_collection").clear_snippets "markdown"
 
 local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
@@ -283,6 +285,37 @@ ls.add_snippets("tex", {
                 }),
                 sectiontitle = i(4, "Section Title"),
                 section = i(5, ""),
+            }
+        )
+    )
+})
+
+ls.add_snippets("markdown", {
+    s(
+        "on",
+        fmta(
+            [=[
+---
+date: "{{date}}"
+tags:
+    - <tags>
+hubs:
+    - "[[<hub>]]"<url_choice>
+---
+
+# <title>
+
+<body>
+]=],
+            {
+                tags = i(1, ""),
+                hub = i(2, ""),
+                url_choice = c(3, {
+                    sn(nil, { t({ "", "urls:", "    - " }), i(1, "") }),
+                    t(""),
+                }),
+                title = i(4, ""),
+                body = i(5, ""),
             }
         )
     )
