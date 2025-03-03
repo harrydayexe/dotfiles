@@ -85,7 +85,7 @@ vim.keymap.set("n", "<leader>oo",
 -- for review workflow
 -- move file in current buffer to zettelkasten folder
 vim.keymap.set("n", "<leader>ok",
-    "<cmd>!mv '%:p' /Users/harryday/library/Mobile\\ Documents/iCloud~md~obsidian/Documents/harrydayexe/zettelkasten<cr><cmd>bd<cr>",
+    "<cmd>!mv '%:p' /Users/harryday/library/Mobile\\ Documents/iCloud~md~obsidian/Documents/harrydayexe/zettelkasten<cr><cmd>Bdelete<cr>",
     { desc = "[O]bsidian O[K]ay" })
 -- delete file in current buffer
 vim.keymap.set("n", "<leader>od", "<Nop>", { desc = "[O]bsidian [D]elete [D]ocument", silent = true })

@@ -42,7 +42,9 @@ local servers = {
         }
     },
     html = { filetypes = { 'html', 'twig', 'hbs' } },
-    htmx = {},
+    htmx = {
+        filetypes = { 'html', 'twig', 'hbs' },
+    },
     lua_ls = {
         Lua = {
             workspace = { checkThirdParty = false },
@@ -53,7 +55,9 @@ local servers = {
     },
     pyright = {},
     rust_analyzer = {},
-    tailwindcss = {},
+    tailwindcss = {
+        filetypes = { 'html', 'css', 'scss', 'javascript', 'typescript', 'vue', 'svelte' },
+    },
     texlab = {},
     ts_ls = {},
 }
