@@ -79,7 +79,7 @@ require("obsidian").setup({
 })
 
 vim.keymap.set("n", "<leader>oo",
-    ":cd /Users/harryday/library/Mobile\\ Documents/iCloud~md~obsidian/Documents/harrydayexe<cr>",
+    "<cmd>cd /Users/harryday/library/Mobile\\ Documents/iCloud~md~obsidian/Documents/harrydayexe<cr><cmd>Oil<cr>",
     { desc = "[O]pen [O]bsidian Workspace" })
 
 -- for review workflow
@@ -89,3 +89,42 @@ vim.keymap.set("n", "<leader>ok",
     { desc = "[O]bsidian O[K]ay" })
 -- delete file in current buffer
 vim.keymap.set("n", "<leader>odd", "<cmd>!rm '%:p'<cr><cmd>bd<cr>", { desc = "[O]bsidian [D]elete [D]ocument" })
+
+-- search for files in full vault
+vim.keymap.set("n", "<leader>fop",
+    ":Telescope find_files search_dirs={\"/Users/harryday/library/Mobile\\ Documents/iCloud~md~obsidian/Documents/harrydayexe/notes\"}<cr>",
+    { desc = "[F]ind [O]bsidian [P]roject files" })
+vim.keymap.set("n", "<leader>fos",
+    ":Telescope live_grep search_dirs={\"/Users/harryday/library/Mobile\\ Documents/iCloud~md~obsidian/Documents/harrydayexe/notes\"}<cr>",
+    { desc = "[F]ind [O]bsidian by [S]earch" })
+
+-- create a new note
+-- Define a function to create a vertical split, prompt for input, and run the command
+function run_on_command()
+    -- Prompt for input
+    local input = vim.fn.input("Enter file name: ")
+    if input == nil or input == "" then
+        print("No input provided.")
+        return
+    end
+
+    -- Wrap the input in quotes using shellescape
+    local escaped_input = vim.fn.shellescape(input)
+    local cmd = "on-nvim " .. escaped_input
+
+    -- Execute the script and capture its output (the file path)
+    local file_path = vim.fn.system(cmd)
+    file_path = vim.fn.trim(file_path)
+
+    if file_path == "" then
+        print("Script did not return a file path.")
+        return
+    end
+
+    -- Open the file in a vertical split.
+    vim.cmd("vsplit " .. vim.fn.fnameescape(file_path))
+end
+
+-- Map the function to a keybinding (for example, <Leader>o in normal mode)
+vim.api.nvim_set_keymap('n', '<Leader>on', ':lua run_on_command()<CR>',
+    { desc = "[O]bsidian [N]ote", noremap = true, silent = true })

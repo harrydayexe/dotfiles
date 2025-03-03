@@ -41,3 +41,13 @@ vim.keymap.set("n", "<Up>", "<nop>")
 vim.keymap.set("n", "<Down>", "<nop>")
 vim.keymap.set("n", "<Left>", "<nop>")
 vim.keymap.set("n", "<Right>", "<nop>")
+
+-- Go to dotfiles
+vim.keymap.set("n", "<leader><leader>d",
+    "<cmd>cd /Users/harryday/Developer/dotfiles<cr><cmd>Oil<cr>",
+    { desc = "Open [D]otfiles Workspace" })
+
+-- Go to dotfiles/nvim
+vim.keymap.set("n", "<leader><leader>v",
+    "<cmd>cd /Users/harryday/Developer/dotfiles/.config/nvim/<cr><cmd>Oil<cr>",
+    { desc = "Open Neo[V]im Config Workspace" })
