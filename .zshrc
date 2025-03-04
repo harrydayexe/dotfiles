@@ -105,6 +105,7 @@ alias tctl='talosctl'
 alias exportenv='export $(grep -v '^#' .env | xargs)'
 alias dcu='docker-compose up -d'
 alias dcd='docker-compose down'
+alias dcs='docker-compose stop'
 alias or='vim $HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/harrydayexe/inbox/*.md'
 alias oo='cd $HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/harrydayexe'
 
