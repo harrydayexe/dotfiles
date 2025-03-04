@@ -108,6 +108,7 @@ alias dcd='docker-compose down'
 alias dcs='docker-compose stop'
 alias or='vim $HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/harrydayexe/inbox/*.md'
 alias oo='cd $HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/harrydayexe'
+alias ob='open /Applications/Obsidian.app'
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
