@@ -8,6 +8,11 @@ require("obsidian").setup({
     notes_subdir = "inbox",
     new_notes_location = "notes_subdir",
 
+    daily_notes = {
+        folder = "daily",
+        default_tags = { "daily" },
+        template = "templates/Daily template.md",
+    },
 
     disable_frontmatter = true,
     templates = {
@@ -99,6 +104,9 @@ vim.keymap.set("n", "<leader>fop",
 vim.keymap.set("n", "<leader>fos",
     ":Telescope live_grep search_dirs={\"/Users/harryday/library/Mobile\\ Documents/iCloud~md~obsidian/Documents/harrydayexe/notes\"}<cr>",
     { desc = "[F]ind [O]bsidian by [S]earch" })
+
+-- Daily notes
+vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianToday<cr>", { desc = "[O]bsidian [T]oday" })
 
 -- create a new note
 -- Define a function to create a vertical split, prompt for input, and run the command

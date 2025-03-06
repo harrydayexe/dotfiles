@@ -290,13 +290,17 @@ ls.add_snippets("tex", {
     )
 })
 
+local function format_date_obsidian()
+    return os.date("%Y-%m-%d")
+end
+
 ls.add_snippets("markdown", {
     s(
         "on",
         fmta(
             [=[
 ---
-date: "{{date}}"
+date: <date>
 tags:
     - <tags>
 hubs:
@@ -308,6 +312,7 @@ hubs:
 <body>
 ]=],
             {
+                date = t(format_date_obsidian()),
                 tags = i(1, ""),
                 hub = i(2, ""),
                 url_choice = c(3, {
