@@ -14,6 +14,7 @@ dashboard.section.header.val = {
 -- Set menu
 dashboard.section.buttons.val = {
     dashboard.button("ot", "󰃶 > Open Today's Daily Note", "<cmd>ObsidianToday<CR>"),
+    dashboard.button("oy", "󰃶 > Open Yesterday's Daily Note", "<cmd>ObsidianToday<CR>"),
     dashboard.button("on", " > New Obsidian Note", "<cmd>ObsidianNewNote<CR>"),
     dashboard.button("oo", " > Open Obsidian Vault",
         "<cmd>cd /Users/harryday/library/Mobile\\ Documents/iCloud~md~obsidian/Documents/harrydayexe<cr><cmd>Oil<cr>"),

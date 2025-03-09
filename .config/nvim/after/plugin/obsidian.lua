@@ -11,7 +11,8 @@ require("obsidian").setup({
     daily_notes = {
         folder = "daily",
         default_tags = { "daily" },
-        template = "templates/Daily template.md",
+        template =
+        "/Users/harryday/Library/Mobile Documents/iCloud~md~obsidian/Documents/harrydayexe/templates/Daily-template.md",
     },
 
     disable_frontmatter = true,
@@ -106,6 +107,7 @@ vim.keymap.set("n", "<leader>fos",
     { desc = "[F]ind [O]bsidian by [S]earch" })
 
 -- Daily notes
+vim.keymap.set("n", "<leader>oy", "<cmd>ObsidianToday -1<cr>", { desc = "[O]bsidian [Y]esterday" })
 vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianToday<cr>", { desc = "[O]bsidian [T]oday" })
 
 -- create a new note
