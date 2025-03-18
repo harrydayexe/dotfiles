@@ -13,6 +13,7 @@ PATH="/opt/homebrew/opt/python@3.13/libexec/bin:$PATH"
 PATH="/opt/homebrew/opt/ffmpeg@6/bin:$PATH"
 PATH="/opt/homebrew/opt/mysql@8.4/bin:$PATH"
 PATH="$HOME/Developer/dotfiles/bin:$PATH"
+PATH="$HOME/.ghcup/bin:$PATH"
 export PATH
 
 # Homebrew
