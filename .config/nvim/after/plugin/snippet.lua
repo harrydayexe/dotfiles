@@ -306,7 +306,6 @@ tags:
 hubs:
     - "[[<hub>]]"<url_choice>
 ---
-
 # <title>
 
 <body>

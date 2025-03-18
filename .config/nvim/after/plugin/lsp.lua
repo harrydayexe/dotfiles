@@ -39,8 +39,10 @@ local servers = {
             gopls = {
                 usePlaceholders = true,
             },
-        }
+        },
+        filetypes = { "go", "gomod", "gowork", "gotmpl", "html" }
     },
+    hls = {},
     html = { filetypes = { 'html', 'twig', 'hbs' } },
     htmx = {
         filetypes = { 'html', 'twig', 'hbs' },
