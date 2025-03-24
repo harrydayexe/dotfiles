@@ -6,6 +6,7 @@ if [ -z "$1" ]; then
 fi
 
 file_name=$(echo "$1" | tr ' ' '-')
+file_name=$(echo "$file_name" | tr '/' '-')
 formatted_file_name=$(date "+%Y-%m-%d")_${file_name}.md
 cd "/Users/harryday/Library/Mobile Documents/iCloud~md~obsidian/Documents/harrydayexe" || exit
 touch "inbox/${formatted_file_name}"
