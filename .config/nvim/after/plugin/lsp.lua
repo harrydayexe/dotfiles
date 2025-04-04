@@ -117,7 +117,10 @@ require("lspconfig").clangd.setup {
     cmd = {
         "clangd",
         "--enable-config",
-        "--fallback-style=webkit",
+        "--fallback-style=microsoft",
     },
     filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'proto' },
 }
+
+vim.keymap.set('n', "<leader><leader>l", "<cmd>source ~/.config/nvim/after/plugin/lsp.lua<cr>",
+    { desc = 'Reload [L]sp Settings' })
