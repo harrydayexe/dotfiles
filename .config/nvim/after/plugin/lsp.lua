@@ -114,6 +114,10 @@ capabilities.offsetEncoding = { 'utf-16' }
 require("lspconfig").clangd.setup {
     capabilities = capabilities,
     on_attach = on_attach,
-    cmd = { "clangd", "--enable-config" },
+    cmd = {
+        "clangd",
+        "--enable-config",
+        "--fallback-style=webkit",
+    },
     filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'proto' },
 }
