@@ -229,21 +229,61 @@ ls.add_snippets("tex", {
         "doc",
         fmta(
             [[
-\documentclass{article}
-\usepackage{graphicx} % Required for inserting images
-\usepackage{amsmath} % Required for some math elements
-\usepackage{amssymb} % Required for some math symbols
-\usepackage{natbib} % Required for bibliography
-\usepackage[none]{hyphenat} % Prevents hyphenation
-\bibliographystyle{agsm} % Sets the bibliography style
-\usepackage{pgfplots} % Required for plotting
-\usepackage{pgfplotstable} % For loading CSV files
-\pgfplotsset{compat=1.18} % Ensures compatibility
-\usepgfplotslibrary{external} % For externalising plots
-\usepackage[a4paper, total={6in, 9in}]{geometry}
-\usepackage{subcaption}  % Allows labeled subfigures
-\usepackage{fancyhdr} % Required for custom headers
-\pagestyle{fancy} % Set the page style to use the fancy headers
+\documentclass[12pt,a4paper]{report}
+
+% Packages for spacing, graphics, math, hyperlinks, bibliography, and code listings
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fancyhdr}        % For custom headers and footers
+\usepackage{verbatim}       % For verbatim text
+\usepackage{setspace}       % For setting spacing
+\usepackage{graphicx}       % For including images
+\graphicspath{ {./images/} } % Path to images
+\usepackage{amsmath, amssymb}  % Math packages
+\usepackage{hyperref}       % For hyperlinks
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\usepackage{natbib}         % For bibliography formatting
+\usepackage{listings}       % For source code listings
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    literate={`}{\textasciigrave}1
+}
+
+\lstset{style=mystyle}
+
+\usepackage{microtype}      % For better typography (especially with hyphenation)
+\usepackage{etoolbox}
+\apptocmd{\thebibliography}{\raggedright}{}{} % Remove underfull \hbox warnings
+
+
+% Adjust spacing
+\doublespacing
 
 % Clear all header and footer fields
 \fancyhf{}
@@ -263,15 +303,17 @@ ls.add_snippets("tex", {
 \author{Harry Day}
 \date{<date>}
 
-<toc>
 
 \begin{document}
 
 \maketitle
 
+<toc>
+
 \section{<sectiontitle>}
 <section>
 
+\bibliographystyle{agsm}
 \bibliography{ref}
 
 \end{document}
