@@ -1,4 +1,3 @@
-tap "dart-lang/dart"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "sass/sass"
@@ -30,6 +29,7 @@ brew "tesseract"
 brew "ffmpeg"
 brew "gcc"
 brew "fzf"
+brew "gdb"
 brew "gh"
 brew "ghcup"
 brew "ghostscript"
@@ -40,13 +40,12 @@ brew "hdf5"
 brew "helm"
 brew "helmfile"
 brew "libheif"
+brew "libomp"
 brew "libraw"
 brew "jdtls"
 brew "jq"
 brew "k9s"
-brew "llvm"
 brew "mas"
-brew "protobuf"
 brew "mysql@8.4"
 brew "tree-sitter"
 brew "neovim"
@@ -55,6 +54,7 @@ brew "openjdk@17"
 brew "openssh"
 brew "pandoc"
 brew "pngpaste"
+brew "protobuf"
 brew "ripgrep"
 brew "rustup"
 brew "sqlc"
@@ -80,8 +80,10 @@ cask "dbeaver-community"
 cask "discord"
 cask "font-jetbrains-mono-nerd-font"
 cask "google-chrome"
+cask "google-cloud-sdk"
 cask "iterm2"
 cask "jetbrains-toolbox"
+cask "linear-linear"
 cask "logi-options+"
 cask "microsoft-auto-update"
 cask "microsoft-teams"
@@ -103,7 +105,7 @@ cask "wwdc"
 cask "zoom"
 mas "Affinity Designer", id: 824171161
 mas "Affinity Photo", id: 824183456
-mas "Balatro+", id: 6502451661
+mas "Balatro", id: 6502451661
 mas "Boop", id: 1518425043
 mas "Bridge Constructor+", id: 1587908263
 mas "Compressor", id: 424390742
@@ -112,6 +114,7 @@ mas "Developer", id: 640199958
 mas "Final Cut Pro", id: 424389933
 mas "GarageBand", id: 682658836
 mas "Goodnotes", id: 1444383602
+mas "Hush", id: 1544743900
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Logic Pro", id: 634148309
