@@ -1,0 +1,5 @@
+[user]
+    name = Harry Day
+    email = contact@harryday.xyz
+[commit]
+    gpgsign = false
