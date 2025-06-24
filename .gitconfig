@@ -21,8 +21,6 @@
     path = .gitconfig-uni
 [includeIf "gitdir:~/Developer/novlr/"]
     path = .gitconfig-novlr
-[includeIf "gitdir:~/Library/Mobile Documents/iCloud~md~obsidian/Documents/harrydayexe/"]
-    path = .gitconfig-obsidian
 [advice]
 	addIgnoredFile = false
 [push]
