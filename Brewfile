@@ -80,8 +80,8 @@ cask "chatgpt"
 cask "dbeaver-community"
 cask "discord"
 cask "font-jetbrains-mono-nerd-font"
+cask "gcloud-cli"
 cask "google-chrome"
-cask "google-cloud-sdk"
 cask "gpg-suite-no-mail"
 cask "iterm2"
 cask "jetbrains-toolbox"
@@ -93,6 +93,7 @@ cask "mongodb-compass"
 cask "multiviewer-for-f1"
 cask "nordvpn"
 cask "notion"
+cask "obs"
 cask "obsidian"
 cask "postman"
 cask "qflipper"
@@ -106,7 +107,6 @@ cask "trezor-suite"
 cask "wwdc"
 cask "zoom"
 mas "Affinity Designer", id: 824171161
-mas "Affinity Photo", id: 824183456
 mas "Balatro", id: 6502451661
 mas "Boop", id: 1518425043
 mas "Bridge Constructor+", id: 1587908263
