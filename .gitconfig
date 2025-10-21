@@ -4,6 +4,7 @@
 	signingkey = 93F9B47EF71A3BB7
 [pull]
 	ff = only
+	rebase = true
 [core]
 	ignorecase = false
 	excludesfile = /Users/harryday/.gitignore

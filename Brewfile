@@ -69,6 +69,7 @@ brew "thefuck"
 brew "tlrc"
 brew "tree"
 brew "uncrustify"
+brew "uv"
 brew "vips"
 brew "watch"
 brew "watchman"
@@ -76,7 +77,7 @@ brew "zoxide"
 brew "siderolabs/tap/talosctl"
 cask "balenaetcher"
 cask "basictex"
-cask "chatgpt"
+cask "claude"
 cask "dbeaver-community"
 cask "discord"
 cask "font-jetbrains-mono-nerd-font"
@@ -103,6 +104,7 @@ cask "sf-symbols"
 cask "skim"
 cask "slack"
 cask "spotify"
+cask "swiftformat-for-xcode"
 cask "trezor-suite"
 cask "wwdc"
 cask "zoom"
@@ -123,9 +125,9 @@ mas "Logic Pro", id: 634148309
 mas "Mini Motorways", id: 1456188526
 mas "Motion", id: 434290957
 mas "Numbers", id: 409203825
-mas "Outlanders 2", id: 1614682164
 mas "Pages", id: 409201541
 mas "Timery", id: 1425368544
 mas "WHAT THE CAR?", id: 1534708672
 mas "WhatsApp", id: 310633997
 mas "Xcode", id: 497799835
+go "github.com/air-verse/air"
