@@ -52,6 +52,7 @@
     # context                 # user@host
     dir                       # current directory
     vcs                       # git status
+    worktree                  # git worktree name
     # command_execution_time  # previous command duration
     # =========================[ Line #2 ]=========================
     newline                   # \n
@@ -150,6 +151,23 @@
   typeset -g POWERLEVEL9K_VCS_{COMMITS_AHEAD,COMMITS_BEHIND}_MAX_NUM=1
   # Remove space between '⇣' and '⇡' and all trailing spaces.
   typeset -g POWERLEVEL9K_VCS_CONTENT_EXPANSION='${${${P9K_CONTENT/⇣* :⇡/⇣⇡}// }//:/ }'
+
+  # Git worktree segment
+  typeset -g POWERLEVEL9K_WORKTREE_FOREGROUND=$yellow
+  # Show worktree name when in a worktree (not main working tree)
+  function prompt_worktree() {
+    local worktree_name=""
+    # Check if we're in a git repository
+    if git rev-parse --git-dir &>/dev/null; then
+      local git_dir=$(git rev-parse --git-dir 2>/dev/null)
+      # Check if .git is a file (indicates worktree) or if git-dir contains "worktrees"
+      if [[ -f "${git_dir}/../.git" ]] || [[ "$git_dir" == *"/worktrees/"* ]]; then
+        # Extract worktree name from the path
+        worktree_name=$(basename "$(git rev-parse --show-toplevel)")
+        p10k segment -f $POWERLEVEL9K_WORKTREE_FOREGROUND -t "[$worktree_name]"
+      fi
+    fi
+  }
 
   # Grey current time.
   typeset -g POWERLEVEL9K_TIME_FOREGROUND=$grey
