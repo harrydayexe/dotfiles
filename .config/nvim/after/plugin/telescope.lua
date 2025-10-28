@@ -47,6 +47,9 @@ require('telescope').setup {
         },
     },
 }
+
+require('telescope').load_extension('git_worktree')
+
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
 
@@ -66,3 +69,7 @@ vim.keymap.set('n', '<leader>/', function()
 end, { desc = '[/] Fuzzily search in current buffer' })
 vim.keymap.set('n', '<leader>fs', builtin.live_grep, { desc = '[F]ind by [S]earch' })
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope oil<CR>", { desc = '[F]ind [F]olders', noremap = true, silent = true })
+vim.keymap.set('n', "<leader>gwa", require('telescope').extensions.git_worktree.create_git_worktree,
+    { desc = '[G]it [W]orktree [A]dd' })
+vim.keymap.set('n', "<leader>gwl", require('telescope').extensions.git_worktree.git_worktrees,
+    { desc = '[G]it [W]orktree [L]ist' })
