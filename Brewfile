@@ -14,6 +14,7 @@ brew "jpeg-xl"
 brew "aom"
 brew "autopep8"
 brew "bat"
+brew "cbonsai"
 brew "cmake"
 brew "cppcheck"
 brew "curl"
@@ -33,6 +34,7 @@ brew "gdb"
 brew "gh"
 brew "ghcup"
 brew "ghostscript"
+brew "protobuf"
 brew "gnuplot"
 brew "go"
 brew "golang-migrate"
@@ -54,8 +56,8 @@ brew "openjdk@17"
 brew "openssh"
 brew "pandoc"
 brew "pinentry-mac"
+brew "pipes-sh"
 brew "pngpaste"
-brew "protobuf"
 brew "ripgrep"
 brew "rustup"
 brew "sqlc"
@@ -126,8 +128,9 @@ mas "Mini Motorways", id: 1456188526
 mas "Motion", id: 434290957
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Timery", id: 1425368544
 mas "WHAT THE CAR?", id: 1534708672
 mas "WhatsApp", id: 310633997
 mas "Xcode", id: 497799835
 go "github.com/air-verse/air"
+go "golang.org/x/tools/cmd/godoc"
+go "github.com/princjef/gomarkdoc/cmd/gomarkdoc"
