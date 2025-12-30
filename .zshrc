@@ -96,6 +96,9 @@ else
 fi
 '
 
+# Global Aliases
+alias -g NE='2>/dev/null'
+
 # Aliases
 alias ls='ls --color'
 alias l='ls --color -lah'
