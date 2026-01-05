@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:swiftlens.tools)",
+      "Bash(claude mcp list:*)",
+      "Bash(claude mcp get:*)",
+      "Bash(cat:*)",
+      "Read(//Users/harryday/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
