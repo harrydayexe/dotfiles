@@ -144,6 +144,8 @@ eval "$(thefuck --alias)"
 
 # Add ssh agent
 eval "$(ssh-agent -s &>/dev/null)"
+export SSH_ASKPASS=/Users/harryday/Developer/dotfiles/bin/ssh-askpass.sh
+export DISPLAY=":0"
 
 # NVM integrations
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
