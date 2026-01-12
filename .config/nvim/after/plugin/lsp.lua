@@ -98,12 +98,6 @@ sourcekitCapabilities.workspace = {
     },
 }
 
-require('lspconfig').sourcekit.setup {
-    capabilities = sourcekitCapabilities,
-    on_attach = on_attach,
-    filetypes = { 'swift' },
-}
-
 require('lspconfig').pbls.setup {
     capabilities = capabilities,
     on_attach = on_attach,
