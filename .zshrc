@@ -142,8 +142,14 @@ fi
 # The Fuck
 eval "$(thefuck --alias)"
 
-# Add ssh agent
-eval "$(ssh-agent -s &>/dev/null)"
+# Check if agent is running and responding
+if ! ssh-add -l &>/dev/null; then
+    # Kill any existing agents
+    killall ssh-agent 2>/dev/null
+    # Start new agent
+    eval "$(ssh-agent -s)"
+fi
+
 export SSH_ASKPASS=/Users/harryday/Developer/dotfiles/bin/ssh-askpass.sh
 export DISPLAY=":0"
 
