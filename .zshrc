@@ -147,10 +147,11 @@ if ! ssh-add -l &>/dev/null; then
     # Kill any existing agents
     killall ssh-agent 2>/dev/null
     # Start new agent
-    eval "$(ssh-agent -s)" &>/dev/null
+    eval "$(ssh-agent -s)" 
 fi
 
 export SSH_ASKPASS=/Users/harryday/Developer/dotfiles/bin/ssh-askpass.sh
+export SSH_ASKPASS_REQUIRE=force
 export DISPLAY=":0"
 
 # NVM integrations

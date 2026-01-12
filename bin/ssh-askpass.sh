@@ -23,20 +23,18 @@ if [[ "$1" == "Confirm user presence"* ]]
 then
     echo
 else
-    # See if we can get the hash of the key
-    # that we want the password for
-    # (this enables keychain option support)
-    HASHTYPE=$(echo $1 | awk -F':' '{print $1}')
-    if [[ "$HASHTYPE" == *"SHA256" ]]
+    # Check if this is a yubikey request
+    if [[ "$1" == *"yubikey"* ]]
     then
         # Grab the actual hash
-        SHA256=$(echo $1 | awk -F':' '{print $2}')
+        SHA256="MlH8j2KwL8zz71lP5Sb/fXFzR7I00UxNU8Me9DYUufw"
         PROMPT="SETDESC $1\nOPTION allow-external-password-cache\nSETKEYINFO $SHA256\nGETPIN"
     else
         # Otherwise don't include the keyinfo
         PROMPT="SETDESC $1\nGETPIN"
     fi
 
+    echo $PROMPT > /Users/harryday/Developer/testing/ssh-out.log
     # Prompt the user for their pin
     PIN=$(echo -e $PROMPT | pinentry-mac | grep D | tr -d '\n')
     # Return the pin to ssh-agent starting after 'D '
