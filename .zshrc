@@ -125,6 +125,9 @@ alias bsi='cbonsai -S --life=60'
 alias glu='git fetch --prune && git branch -r | awk "{print \$1}" | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk "{print \$1}"'
 alias gru='git fetch --prune && git branch -r | awk "{print \$1}" | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk "{print \$1}" | xargs git branch -d'
 alias gpm='git co main && git pull origin main'
+alias gwa='git worktree add'
+alias gwr='git worktree remove'
+alias gwl='git worktree list'
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
