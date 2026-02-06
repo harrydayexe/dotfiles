@@ -2,36 +2,31 @@
   "env": {
     "DISABLE_ZOXIDE": "1"
   },
-  "alwaysThinkingEnabled": true,
   "statusLine": {
     "type": "command",
     "command": "input=$(cat); cwd=$(echo \"$input\" | jq -r '.workspace.current_dir'); model=$(echo \"$input\" | jq -r '.model.display_name'); blue='\\033[2;38;5;117m'; grey='\\033[2;38;5;242m'; cyan='\\033[2;38;5;159m'; reset='\\033[0m'; git_info=\"\"; if git -C \"$cwd\" rev-parse --git-dir > /dev/null 2>&1; then branch=$(git -C \"$cwd\" -c core.useBuiltinFSMonitor=false branch --show-current 2>/dev/null || echo \"detached\"); dirty=\"\"; if ! git -C \"$cwd\" -c core.useBuiltinFSMonitor=false diff --quiet 2>/dev/null || ! git -C \"$cwd\" -c core.useBuiltinFSMonitor=false diff --cached --quiet 2>/dev/null; then dirty=\"*\"; fi; ahead_behind=$(git -C \"$cwd\" -c core.useBuiltinFSMonitor=false rev-list --left-right --count HEAD...@{upstream} 2>/dev/null || echo \"\"); arrows=\"\"; if [ -n \"$ahead_behind\" ]; then ahead=$(echo \"$ahead_behind\" | awk '{print $1}'); behind=$(echo \"$ahead_behind\" | awk '{print $2}'); [ \"$behind\" != \"0\" ] && arrows=\"${arrows}⇣\"; [ \"$ahead\" != \"0\" ] && arrows=\"${arrows}⇡\"; [ -n \"$arrows\" ] && arrows=\"${cyan}:${arrows}${grey}\"; fi; git_info=\" ${grey}${branch}${dirty}${arrows}${reset}\"; fi; printf \"${blue}%s${reset}${git_info}  ${grey}%s${reset}\\n\" \"$(basename \"$cwd\")\" \"$model\""
   },
+  "alwaysThinkingEnabled": true,
   "allowedTools": [
-     "Bash(find:*)",
-     "Bash(tree:*)",
-     "Bash(sed:*)",
-     "WebSearch",
-     "Bash(go get:*)",
-     "Bash(go run:*)",
-     "Bash(go doc:*)",
-     "Bash(git tag:*)",
-     "Bash(gh pr view:*)",
-     "Bash(gh run view:*)",
-     "Bash(gofmt:*)",
-     "Bash(git add:*)",
-     "Bash(git commit:*)",
-     "WebFetch(domain:goreleaser.com)",
-     "Bash(go build:*)",
-     "Bash(go mod tidy:*)",
-     "Bash(rm:*)",
-     "Bash(go fmt:*)",
-     "Bash(go vet:*)",
-     "Bash(golangci-lint run:*)",
-     "Bash(go install:*)",
-     "WebFetch(domain:github.com)",
-     "Bash(go test:*)",
-     "Bash(go tool cover:*)"
-
-  ]
+    "Bash(find:*)",
+    "Bash(tree:*)",
+    "Bash(sed:*)",
+    "WebSearch",
+    "Bash(go get:*)",
+    "Bash(go doc:*)",
+    "Bash(gh pr view:*)",
+    "Bash(gh run view:*)",
+    "Bash(gofmt:*)",
+    "WebFetch(domain:goreleaser.com)",
+    "Bash(go build:*)",
+    "Bash(go mod tidy:*)",
+    "Bash(rm:*)",
+    "Bash(go fmt:*)",
+    "Bash(go vet:*)",
+    "Bash(golangci-lint run:*)",
+    "WebFetch(domain:github.com)",
+    "Bash(go test:*)",
+    "Bash(go tool cover:*)"
+  ],
+  "autoUpdatesChannel": "stable"
 }
