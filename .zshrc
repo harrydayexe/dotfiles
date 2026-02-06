@@ -51,7 +51,12 @@ zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 
 # Load completions
-autoload -Uz compinit && compinit
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+  autoload -Uz compinit
+  compinit
+fi
 
 zinit cdreplay -q
 
