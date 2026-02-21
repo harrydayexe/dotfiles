@@ -46,6 +46,7 @@ brew "helmfile"
 brew "libheif"
 brew "jdtls"
 brew "jq"
+brew "just"
 brew "k9s"
 brew "libass"
 brew "libomp"
@@ -88,6 +89,7 @@ cask "dbeaver-community"
 cask "discord"
 cask "font-jetbrains-mono-nerd-font"
 cask "gcloud-cli"
+cask "ghostty"
 cask "google-chrome"
 cask "gpg-suite-no-mail"
 cask "iterm2"
@@ -111,6 +113,7 @@ cask "skim"
 cask "slack"
 cask "spotify"
 cask "swiftformat-for-xcode"
+cask "tor-browser"
 cask "trezor-suite"
 cask "wwdc"
 cask "yubico-authenticator"
@@ -127,12 +130,12 @@ mas "GarageBand", id: 682658836
 mas "Goodnotes", id: 1444383602
 mas "Hush", id: 1544743900
 mas "iMovie", id: 408981434
-mas "Keynote", id: 409183694
+mas "Keynote", id: 361285480
 mas "Logic Pro", id: 634148309
 mas "Mini Motorways", id: 1456188526
 mas "Motion", id: 434290957
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
+mas "Numbers", id: 361304891
+mas "Pages", id: 361309726
 mas "WHAT THE CAR?", id: 1534708672
 mas "WhatsApp", id: 310633997
 mas "Xcode", id: 497799835
