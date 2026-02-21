@@ -36,3 +36,8 @@ vim.opt.conceallevel = 1
 vim.cmd.highlight('IndentLine guifg=#123456')
 -- Current indent line highlight
 vim.cmd.highlight('IndentLineCurrent guifg=#123456')
+
+if vim.fn.getenv("TERM_PROGRAM") == "ghostty" then
+    vim.opt.title = true
+    vim.opt.titlestring = "%{fnamemodify(getcwd(), ':t')}"
+end
