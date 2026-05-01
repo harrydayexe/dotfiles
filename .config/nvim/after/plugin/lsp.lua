@@ -43,7 +43,7 @@ local servers = {
         filetypes = { "go", "gomod", "gowork", "gotmpl", "html" }
     },
     hls = {},
-    html = { filetypes = { 'html', 'twig', 'hbs' } },
+    html = { filetypes = { 'html', 'twig', 'hbs', 'template' } },
     htmx = {
         filetypes = { 'html', 'twig', 'hbs' },
     },
