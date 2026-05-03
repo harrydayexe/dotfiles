@@ -135,6 +135,10 @@ alias gwa='git worktree add'
 alias gwr='git worktree remove'
 alias gwl='git worktree list'
 
+# Just aliases
+alias jl='just --list'
+alias jc='just --choose'
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
