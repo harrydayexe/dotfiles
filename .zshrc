@@ -179,6 +179,4 @@ export GPG_TTY=$(tty)
 alias testgpg="echo \"test\" | gpg --clearsign"
 alias killgpg="gpgconf --kill gpg-agent"
 
-source ~/.iterm2_shell_integration.zsh
-
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
