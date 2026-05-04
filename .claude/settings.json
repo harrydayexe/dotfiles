@@ -28,6 +28,7 @@
       "Bash(go tool cover:*)",
       "Bash(golangci-lint run:*)",
       "Bash(gh pr view:*)",
+      "Bash(gh issue view:*)",
       "Bash(gh run view:*)",
       "WebFetch(domain:github.com)",
       "WebSearch",
