@@ -1,0 +1,16 @@
+# VCS metadata
+\.git
+
+# Repo-only files (not for $HOME)
+^/Brewfile$
+^/Brewfile\.lock\.json$
+^/LICENSE$
+^/README\.md$
+
+# Skip clangd directory for now
+^/clangd$
+
+# Stow's own config and the installer
+^/\.stowrc$
+^/\.stow-local-ignore$
+^/install\.sh$
