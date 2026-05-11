@@ -141,6 +141,7 @@ mas "Xcode", id: 497799835
 go "github.com/air-verse/air"
 go "github.com/harrydayexe/GoBlog/v2/cmd/goblog"
 go "golang.org/x/tools/cmd/godoc"
+go "golang.org/x/tools/cmd/goimports"
 go "github.com/princjef/gomarkdoc/cmd/gomarkdoc"
 go "golang.org/x/tools/gopls"
 go "golang.org/x/vuln/cmd/govulncheck"
