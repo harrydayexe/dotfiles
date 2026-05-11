@@ -26,6 +26,8 @@
       "Bash(go doc:*)",
       "Bash(go test:*)",
       "Bash(go tool cover:*)",
+      "Bash(go version *)",
+      "Bash(govulncheck *)",
       "Bash(golangci-lint run:*)",
       "Bash(gh pr view:*)",
       "Bash(gh issue view:*)",
