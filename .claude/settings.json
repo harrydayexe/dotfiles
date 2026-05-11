@@ -32,10 +32,7 @@
       "Bash(gh run view:*)",
       "WebFetch(domain:github.com)",
       "WebSearch",
-      "mcp__gopls__go_workspace",
-      "mcp__gopls__go_vulncheck",
-      "mcp__gopls__go_search",
-      "mcp__gopls__go_package_api"
+      "mcp__gopls__*"
     ]
   },
   "editorMode": "vim",
