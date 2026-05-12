@@ -7,3 +7,7 @@ b. If something is not clear, or there are multiple ways to achieve the same or 
 When planning execution, defer to the user when large technical decisions need to be made, architecture needs to be designed, or if there are multiple ways to achieve something.
 
 IMPORTANT: NEVER ASSUME AND ALWAYS DEFER TO THE USER WHEN UNSURE ON SOMETHING OR WHEN AN IMPACTFUL DECISION MUST BE MADE
+
+
+## GoLang Specific Instructions
+Do not attempt to search for the source code of Go modules on disk. Attempts will be blocked. For documentation about modules, use the gopls mcp server
