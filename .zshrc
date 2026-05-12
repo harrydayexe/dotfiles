@@ -42,12 +42,13 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
 # Add in snippets
+zinit snippet OMZP::gh
 zinit snippet OMZP::git
+zinit snippet OMZP::golang
 zinit snippet OMZP::sudo
-zinit snippet OMZP::archlinux
-zinit snippet OMZP::aws
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
+zinit snippet OMZP::nvm
 zinit snippet OMZP::command-not-found
 
 # Load completions
