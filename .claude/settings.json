@@ -52,6 +52,15 @@
             "command": "if jq -r '.tool_input.command // \"\"' | grep -qE 'ls[[:space:]].*go/pkg/mod'; then printf '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"deny\",\"permissionDecisionReason\":\"Blocked: Do not ls the Go module cache on disk. Use the gopls MCP server tools instead: go_search to find packages/symbols, go_package_api to inspect a package API, or go_file_context to understand file dependencies.\"}}'; fi"
           }
         ]
+      },
+      {
+        "matcher": "Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "input=$(cat); path=$(echo \"$input\" | jq -r '.tool_input.file_path // \"\"'); if echo \"$path\" | grep -qE '/go/pkg/mod/'; then printf '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"deny\",\"permissionDecisionReason\":\"Blocked: Do not read files from the Go module cache. Use the gopls MCP server tools instead: go_search to find packages/symbols, go_package_api to inspect a package API, or go_file_context to understand file dependencies.\"}}'; fi"
+          }
+        ]
       }
     ]
   }
