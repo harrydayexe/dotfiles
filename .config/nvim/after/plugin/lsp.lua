@@ -24,7 +24,9 @@ local on_attach = function(_, bufnr)
         vim.lsp.buf.format()
     end, { desc = 'Format current buffer with LSP' })
 
-    vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+    if vim.bo[bufnr].filetype ~= "markdown" then
+        vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+    end
 end
 
 -- mason-lspconfig requires that these setup functions are called in this order

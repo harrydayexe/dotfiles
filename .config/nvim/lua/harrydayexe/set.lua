@@ -37,6 +37,8 @@ vim.cmd.highlight('IndentLine guifg=#123456')
 -- Current indent line highlight
 vim.cmd.highlight('IndentLineCurrent guifg=#123456')
 
+vim.g.python3_host_prog = vim.fn.expand("~/.venv/nvim/bin/python")
+
 if vim.fn.getenv("TERM_PROGRAM") == "ghostty" then
     vim.opt.title = true
     vim.opt.titlestring = "%{fnamemodify(getcwd(), ':t')}"

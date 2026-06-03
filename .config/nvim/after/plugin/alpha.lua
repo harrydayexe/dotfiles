@@ -23,6 +23,8 @@ dashboard.section.buttons.val = {
     dashboard.button("fp", "󱙓 > Find File", "<cmd>Telescope find_files<CR>"),
     dashboard.button("fs", " > Fuzzy Find in File", "<cmd>Telescope live_grep<CR>"),
     dashboard.button("fr", " > Recent", "<cmd>Telescope oldfiles<CR>"),
+    dashboard.button("jn", "󰠮 > New Jupyter Notebook",
+        "<cmd>lua vim.ui.input({prompt='Notebook name: '}, function(name) if name and name ~= '' then vim.cmd('NewNotebook ' .. name) end end)<CR>"),
     dashboard.button("d", " > Open Dotfiles Workspace", "<cmd>cd /Users/harryday/Developer/dotfiles<cr><cmd>Oil<cr>"),
     dashboard.button("v", " > Open NeoVim Config",
         "<cmd>cd /Users/harryday/Developer/dotfiles/.config/nvim/<cr><cmd>Oil<cr>"),

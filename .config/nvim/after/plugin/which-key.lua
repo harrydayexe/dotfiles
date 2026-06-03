@@ -23,6 +23,8 @@ require('which-key').add {
     { "<leader>c_",        hidden = true },
     { "<leader>o",         group = "[O]bsidian" },
     { "<leader>o_",        hidden = true },
+    { "<leader>j",         group = "[J]upyter" },
+    { "<leader>j_",        hidden = true },
     { "<leader><leader>",  group = "Dotfiles" },
     { "<leader><leader>_", hidden = true },
     { "<leader>fo",        group = "Obsidian" },
