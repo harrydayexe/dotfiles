@@ -9,5 +9,9 @@ When planning execution, defer to the user when large technical decisions need t
 IMPORTANT: NEVER ASSUME AND ALWAYS DEFER TO THE USER WHEN UNSURE ON SOMETHING OR WHEN AN IMPACTFUL DECISION MUST BE MADE
 
 
+## GitHub Issues
+
+When creating GitHub issues via `gh issue create`, always pass the body through a quoted heredoc (`<<'ISSUE'` ... `ISSUE`). The quoted delimiter prevents the shell from interpreting backticks as command substitution. Never escape backticks with `\`` inside the heredoc body — write them literally. Escaping causes `\`` to appear verbatim in the rendered issue instead of a code span.
+
 ## GoLang Specific Instructions
 Do not attempt to search for the source code of Go modules on disk. Attempts will be blocked. For documentation about modules, use the gopls mcp server
