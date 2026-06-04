@@ -1,7 +1,7 @@
 require("jupytext").setup({
-    style = "myst",
-    output_extension = "md",
-    force_ft = "markdown",
+    style = "quarto",
+    output_extension = "qmd",
+    force_ft = "quarto",
 })
 
 local minimal_ipynb = [[{
