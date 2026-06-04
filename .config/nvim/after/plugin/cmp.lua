@@ -44,6 +44,7 @@ cmp.setup {
     sources = {
         { name = "luasnip", priority = 1000 },
         { name = "nvim_lsp" },
+        { name = "otter" },
         { name = "buffer" },
         { name = "path" },
         { name = "nvim_lua" },

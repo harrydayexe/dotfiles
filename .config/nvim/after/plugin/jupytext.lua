@@ -1,5 +1,5 @@
 require("jupytext").setup({
-    style = "markdown",
+    style = "myst",
     output_extension = "md",
     force_ft = "markdown",
 })

@@ -9,9 +9,6 @@ local on_attach = function(_, bufnr)
 
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, create_opts('[G]o to [D]efinition'))
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, create_opts(''))
-    vim.keymap.set('n', '<leader>dv', vim.diagnostic.open_float, create_opts('[V]iew diagnostics'))
-    vim.keymap.set('n', '<leader>d[', vim.diagnostic.goto_prev, create_opts('Jump to previous diagnostic'))
-    vim.keymap.set('n', '<leader>d]', vim.diagnostic.goto_next, create_opts('Jump to next diagnostic'))
     vim.keymap.set('n', '<leader>va', vim.lsp.buf.code_action, create_opts('[V]iew Code [A]ction'))
     vim.keymap.set('n', '<leader>fr', vim.lsp.buf.references, create_opts('[F]ind [R]eferences'))
     vim.keymap.set('n', '<leader>er', vim.lsp.buf.rename, create_opts('[R]ename in buffer'))
@@ -28,6 +25,10 @@ local on_attach = function(_, bufnr)
         vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
     end
 end
+
+vim.keymap.set('n', '<leader>dv', vim.diagnostic.open_float, { desc = '[V]iew diagnostics' })
+vim.keymap.set('n', '<leader>d[', vim.diagnostic.goto_prev, { desc = 'Jump to previous diagnostic' })
+vim.keymap.set('n', '<leader>d]', vim.diagnostic.goto_next, { desc = 'Jump to next diagnostic' })
 
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
