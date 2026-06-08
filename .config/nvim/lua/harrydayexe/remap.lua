@@ -32,6 +32,8 @@ vim.keymap.set({ "n", "v" }, "<leader>x", [["_d]], { desc = 'Delete to Void Regi
 
 vim.keymap.set("n", "Q", "<nop>")
 
+vim.keymap.set("n", "<leader>a", "<cmd>Alpha<CR>", { desc = 'Open [A]lpha Dashboard' })
+
 -- replace current word
 vim.keymap.set("n", "<leader>ec", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
     { desc = 'Replace [C]urrent Word' })
