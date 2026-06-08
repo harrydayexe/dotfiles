@@ -106,29 +106,32 @@ fi
 # Global Aliases
 alias -g NE='2>/dev/null'
 
-# Aliases
+# Overwrite Aliases
 alias ls='ls --color'
 alias l='ls --color -lah'
+alias vim='nvim'
+alias tree='tree -C --gitignore -a -I ".git"'
+alias cat='bat'
+
+# cd Aliases
 alias cdd='cd ~/Developer/'
 alias cdt='cd ~/Developer/testing'
 alias cds='cd ~/Developer/School/year3'
-alias gs='git status'
-alias statusbarfix='xcrun simctl status_bar booted override --time 9:41 --cellularMode active --cellularBars 4 --batteryState charging --operatorName ""'
-alias vim='nvim'
-alias tree='tree -C --gitignore -a -I ".git"'
-alias kctl='kubectl'
-alias tctl='talosctl'
-alias exportenv='export $(grep -v '^#' .env | xargs)'
+
+# Docker Aliases
 alias dcu='docker-compose up -d'
 alias dcd='docker-compose down'
 alias dcs='docker-compose stop'
 alias dps='docker ps'
 alias dpsa='docker ps -a'
+
+# Obsidian Aliases
 alias or='vim $HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/harrydayexe/inbox/*.md'
 alias oo='cd $HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/harrydayexe'
 alias ob='open /Applications/Obsidian.app'
-alias bsi='cbonsai -S --life=60'
 
+# Git Aliases
+alias gs='git status'
 alias glu='git fetch --prune && git branch -r | awk "{print \$1}" | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk "{print \$1}"'
 alias gru='git fetch --prune && git branch -r | awk "{print \$1}" | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk "{print \$1}" | xargs git branch -d'
 alias gpm='git co main && git pull origin main'
@@ -139,6 +142,11 @@ alias gwl='git worktree list'
 # Just aliases
 alias jl='just --list'
 alias jc='just --choose'
+
+# Misc Aliases
+alias bsi='cbonsai -S --life=60'
+alias statusbarfix='xcrun simctl status_bar booted override --time 9:41 --cellularMode active --cellularBars 4 --batteryState charging --operatorName ""'
+alias exportenv='export $(grep -v '^#' .env | xargs)'
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
