@@ -5,7 +5,7 @@ description: Generate a concise, well-formed commit message for the current unco
 # commit-message Skill
 
 ## Purpose
-Generate a concise, well-formed commit message for the current uncommitted changes.
+Generate a concise, well-formed commit message for the current uncommitted changes, strictly following the Conventional Commits specification.
 
 ## Steps
 
@@ -15,11 +15,37 @@ Generate a concise, well-formed commit message for the current uncommitted chang
 
 3. Analyse the diff: understand what changed, why it likely changed (infer from context), and what the effect is.
 
-4. Write a commit message following these rules:
-   - **Subject line** (first line): 50–72 characters, imperative mood ("Add", "Fix", "Remove", not "Added"/"Fixes"), no trailing period.
-   - **Body** (optional, separated by a blank line): explain the *why* and any non-obvious consequences, not the *what* (the diff already shows that). Wrap at 72 characters.
-   - Follow the repo's existing style if it deviates from the above (e.g. Conventional Commits like `feat:`, `fix:`).
+4. Check the current conversation for any GitHub issue numbers the user mentioned working on. If any are present and the commit resolves that issue, include a `Closes #<number>` (or `Fixes #<number>`) footer.
 
-5. Output the final commit message in the conventional commits format inside a fenced code block so the user can copy it easily.
+5. Write a commit message following the **Conventional Commits 1.0.0 specification**:
 
-6. Do NOT run `git commit` unless the user explicitly asks you to.
+   ### Format
+   ```
+   <type>[optional scope]: <description>
+
+   [optional body]
+
+   [optional footer(s)]
+   ```
+
+   ### Rules
+   - **type** MUST be a noun: `feat`, `fix`, `build`, `chore`, `ci`, `docs`, `style`, `refactor`, `perf`, or `test`.
+   - **feat** — new feature (SemVer MINOR bump).
+   - **fix** — bug patch (SemVer PATCH bump).
+   - **scope** is optional; if used, it MUST be a noun in parentheses, e.g. `feat(auth):`.
+   - A `!` MAY be appended before the colon to signal a breaking change, e.g. `feat!:` or `feat(api)!:`.
+   - The **description** MUST immediately follow `<type>[scope]: ` — imperative mood, no trailing period, ≤72 characters for the whole first line.
+   - The **body** is optional. If present, it MUST be separated from the description by one blank line, and MUST explain the *why* (not the *what*). Wrap at 72 characters.
+   - **Footers** are optional. Each footer token uses the format `Token: value` or `Token #value` (git trailer convention). `BREAKING CHANGE` (or `BREAKING-CHANGE`) MUST be a footer when a breaking change is not already signalled by `!`.
+   - Breaking changes appear in MAJOR SemVer bumps regardless of type.
+
+   ### Issue linking (when applicable)
+   If a GitHub issue number was mentioned in this conversation and the commit resolves it, add a footer on its own line:
+   ```
+   Closes #<issue-number>
+   ```
+   Use `Fixes` instead of `Closes` if the issue is a bug fix.
+
+6. Output the final commit message inside a fenced code block so the user can copy it easily.
+
+7. Do NOT run `git commit` unless the user explicitly asks you to.
