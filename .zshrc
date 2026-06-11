@@ -185,6 +185,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 # Set LS COLORS
 export LSCOLORS="ExFxBxDxCxegedabagacad"
+export BAT_THEME="Catppuccin Mocha"
 
 # For GPG
 export GPG_TTY=$(tty)
