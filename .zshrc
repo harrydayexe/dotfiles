@@ -59,6 +59,9 @@ then
   compinit
 fi
 
+fpath=(~/.zsh/completions $fpath)
+autoload -U compinit && compinit
+
 zinit cdreplay -q
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

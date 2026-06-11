@@ -10,3 +10,7 @@ mkdir -p "$HOME/.config" "$HOME/.claude"
 
 cd "$DOTFILES_DIR"
 stow "$(basename "$DOTFILES_DIR")" "$@"
+
+
+mkdir -p ~/.zsh/completions
+just --completions zsh > ~/.zsh/completions/_just
