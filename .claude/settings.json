@@ -34,6 +34,9 @@
       "Bash(gh issue view:*)",
       "Bash(gh issue create:*)",
       "Bash(gh run view:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git status:*)",
       "WebFetch(domain:github.com)",
       "WebSearch",
       "mcp__gopls__*"
