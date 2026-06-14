@@ -9,15 +9,17 @@ Generate a concise, well-formed commit message for the current uncommitted chang
 
 ## Steps
 
-1. Run `git diff --staged` to see staged changes. If there are none, run `git diff` to see unstaged changes. If there are still none, check `git status` for untracked files and inform the user there is nothing to commit.
+1. Review the latest context from the current chat. See if you left any output of what has been changed. 
 
-2. Run `git log --oneline -10` to understand the commit style and conventions used in this repo.
+2. Run `git diff --staged` to see staged changes. If there are none, run `git diff` to see unstaged changes. If there are still none, check `git status` for untracked files and inform the user there is nothing to commit.
 
-3. Analyse the diff: understand what changed, why it likely changed (infer from context), and what the effect is.
+3. Run `git log --oneline -10` to understand the commit style and conventions used in this repo.
 
-4. Check the current conversation for any GitHub issue numbers the user mentioned working on. If any are present and the commit resolves that issue, include a `Closes #<number>` (or `Fixes #<number>`) footer.
+4. Analyse the diff: understand what changed, why it likely changed (infer from context), and what the effect is.
 
-5. Write a commit message following the **Conventional Commits 1.0.0 specification**:
+5. Check the current conversation for any GitHub issue numbers the user mentioned working on. If any are present and the commit resolves that issue, include a `Closes #<number>` (or `Fixes #<number>`) footer.
+
+6. Write a commit message following the **Conventional Commits 1.0.0 specification**:
 
    ### Format
    ```

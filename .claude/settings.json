@@ -37,6 +37,7 @@
       "Bash(git diff:*)",
       "Bash(git log:*)",
       "Bash(git status:*)",
+      "Bash(git show:*)",
       "WebFetch(domain:github.com)",
       "WebSearch",
       "mcp__gopls__*"
