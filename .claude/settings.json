@@ -18,6 +18,7 @@
       "Bash(tree:*)",
       "Bash(sed:*)",
       "Base(just:*)",
+      "Bash(xargs cat)",
       "Bash(go build:*)",
       "Bash(go mod tidy:*)",
       "Bash(go fmt:*)",
