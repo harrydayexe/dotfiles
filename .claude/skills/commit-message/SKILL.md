@@ -1,6 +1,7 @@
 ---
 name: commit-message
-description: Generate a concise, well-formed commit message for the current uncommitted changes.
+description: Generate a commit message from the git diff.
+model: haiku
 ---
 # commit-message Skill
 
@@ -9,17 +10,15 @@ Generate a concise, well-formed commit message for the current uncommitted chang
 
 ## Steps
 
-1. Review the latest context from the current chat. See if you left any output of what has been changed. 
+1. Run `git diff --staged` to see staged changes. If there are none, run `git diff` to see unstaged changes. If there are still none, check `git status` for untracked files and inform the user there is nothing to commit.
 
-2. Run `git diff --staged` to see staged changes. If there are none, run `git diff` to see unstaged changes. If there are still none, check `git status` for untracked files and inform the user there is nothing to commit.
+2. Use the existing conversation context (what was changed and why, any GitHub issue numbers mentioned) instead of re-deriving it — do not run `git log`. If the commit resolves an issue mentioned in the conversation, include a `Closes #<number>` (or `Fixes #<number>`) footer.
 
-3. Run `git log --oneline -10` to understand the commit style and conventions used in this repo.
+3. Analyse the diff and summarise the changes. Focus on the actual effect of the changes, not listing every specific item.
 
-4. Analyse the diff: understand what changed, why it likely changed (infer from context), and what the effect is.
+4. Check the current conversation for any GitHub issue numbers the user mentioned working on. If any are present and the commit resolves that issue, include a `Closes #<number>` (or `Fixes #<number>`) footer.
 
-5. Check the current conversation for any GitHub issue numbers the user mentioned working on. If any are present and the commit resolves that issue, include a `Closes #<number>` (or `Fixes #<number>`) footer.
-
-6. Write a commit message following the **Conventional Commits 1.0.0 specification**:
+5. Write a commit message following the **Conventional Commits 1.0.0 specification**:
 
    ### Format
    ```
