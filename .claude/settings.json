@@ -83,5 +83,6 @@
   "disableAutoMode": "disable",
   "editorMode": "vim",
   "preferredNotifChannel": "iterm2_with_bell",
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "outputStyle": "Concise"
 }
