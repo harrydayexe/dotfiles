@@ -1,7 +1,6 @@
 [user]
     name = Harry Day
     email = contact@harryday.xyz
-	signingkey = 93F9B47EF71A3BB7
 [pull]
 	ff = only
 	rebase = true
@@ -25,6 +24,3 @@
 	autoSetupRemote = true
 [commit]
   template = ~/.gitCommitMessageTemplate
-  gpgsign = true
-[gpg]
-	program = gpg
