@@ -119,7 +119,7 @@ alias cat='bat'
 # cd Aliases
 alias cdd='cd ~/Developer/'
 alias cdt='cd ~/Developer/testing'
-alias cds='cd ~/Developer/School/year3'
+alias cda='cd ~/Developer/agentic'
 
 # Docker Aliases
 alias dcu='docker-compose up -d'
@@ -167,14 +167,6 @@ fi
 # The Fuck
 eval "$(thefuck --alias)"
 
-# Check if agent is running and responding
-# if ! ssh-add -l &>/dev/null; then
-#     # Kill any existing agents
-#     killall ssh-agent 2>/dev/null
-#     # Start new agent
-#     eval "$(ssh-agent -s)" &>/dev/null
-# fi
-
 export SSH_ASKPASS=/Users/harryday/Developer/dotfiles/bin/ssh-askpass.sh
 export SSH_ASKPASS_REQUIRE=force
 export DISPLAY=":0"
@@ -191,5 +183,23 @@ export BAT_THEME="Catppuccin Mocha"
 export GPG_TTY=$(tty)
 alias testgpg="echo \"test\" | gpg --clearsign"
 alias killgpg="gpgconf --kill gpg-agent"
+
+# Agentic Workflow
+AGENTIC_CFG=~/Developer/agentic/config/.devcontainer/devcontainer.json
+
+agentic-token() {
+  security find-generic-password -a "$USER" -s agentic-gh-token -w 2>/dev/null \
+    || { print -u2 "agentic: token not in keychain"; return 1; }
+}
+
+agentic-up() {
+  AGENTIC_GH_TOKEN="$(agentic-token)" || return
+  devcontainer up --workspace-folder ~/Developer/agentic/workspace --config "$AGENTIC_CFG"
+}
+
+agentic() {
+  AGENTIC_GH_TOKEN="$(agentic-token)" || return
+  devcontainer exec --workspace-folder ~/Developer/agentic/workspace --config "$AGENTIC_CFG" zsh
+}
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
