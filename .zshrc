@@ -185,6 +185,9 @@ alias testgpg="echo \"test\" | gpg --clearsign"
 alias killgpg="gpgconf --kill gpg-agent"
 
 # Agentic Workflow
+export DOCKER_CLI_HINTS=false
+
+AGENTIC_WS=~/Developer/agentic/workspace
 AGENTIC_CFG=~/Developer/agentic/config/.devcontainer/devcontainer.json
 
 agentic-token() {
@@ -193,13 +196,33 @@ agentic-token() {
 }
 
 agentic-up() {
+  local -x AGENTIC_GH_TOKEN
   AGENTIC_GH_TOKEN="$(agentic-token)" || return
-  devcontainer up --workspace-folder ~/Developer/agentic/workspace --config "$AGENTIC_CFG"
+  devcontainer up \
+    --workspace-folder "$AGENTIC_WS" \
+    --config "$AGENTIC_CFG" \
+    "$@" \
+    || { print -u2 "agentic: setup failed — container NOT firewalled"; return 1; }
+}
+
+agentic-down() {
+  local ids
+  ids=$(docker ps -aq --filter label=devcontainer.local_folder="$AGENTIC_WS")
+  if [ -z "$ids" ]; then
+    print "agentic: nothing running"
+    return 0
+  fi
+  docker rm -f ${=ids}
 }
 
 agentic() {
+  local -x AGENTIC_GH_TOKEN
   AGENTIC_GH_TOKEN="$(agentic-token)" || return
-  devcontainer exec --workspace-folder ~/Developer/agentic/workspace --config "$AGENTIC_CFG" zsh
+  if [ $# -eq 0 ]; then
+    devcontainer exec --workspace-folder "$AGENTIC_WS" --config "$AGENTIC_CFG" zsh
+  else
+    devcontainer exec --workspace-folder "$AGENTIC_WS" --config "$AGENTIC_CFG" "$@"
+  fi
 }
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
