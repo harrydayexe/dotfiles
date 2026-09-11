@@ -16,6 +16,9 @@ font-thicken = true
 macos-titlebar-style = tabs
 macos-titlebar-proxy-icon = hidden
 
+# MacOS Secure Input is Buggy Currently
+macos-auto-secure-input = false
+
 background-opacity = 0.96
 background-blur-radius = 40
 
