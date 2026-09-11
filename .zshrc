@@ -110,8 +110,8 @@ fi
 alias -g NE='2>/dev/null'
 
 # Overwrite Aliases
-alias ls='ls --color'
-alias l='ls --color -lah'
+alias ls='eza'
+alias l='eza -lah'
 alias vim='nvim'
 alias tree='tree -C --gitignore -a -I ".git"'
 alias cat='bat'
@@ -176,7 +176,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Set LS COLORS
-export LSCOLORS="ExFxBxDxCxegedabagacad"
+export EZA_CONFIG_DIR="$HOME/.config/eza-mocha"
 export BAT_THEME="Catppuccin Mocha"
 
 # For GPG

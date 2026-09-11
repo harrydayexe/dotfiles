@@ -31,6 +31,8 @@ brew "cmake"
 brew "cppcheck"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
+# Modern, maintained replacement for ls
+brew "eza"
 # Like neofetch, but much faster because written mostly in C
 brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
@@ -255,3 +257,4 @@ go "golang.org/x/tools/cmd/goimports"
 go "github.com/princjef/gomarkdoc/cmd/gomarkdoc"
 go "golang.org/x/tools/gopls"
 go "golang.org/x/vuln/cmd/govulncheck"
+npm "@devcontainers/cli"
