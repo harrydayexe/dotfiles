@@ -1,14 +1,15 @@
 [user]
     name = Harry Day
     email = contact@harryday.xyz
+    signingkey = ~/.ssh/id_ed25519_sk_git_signing.pub
 [pull]
-	ff = only
-	rebase = true
+    ff = only
+    rebase = true
 [core]
-	ignorecase = false
-	excludesfile = /Users/harryday/.gitignore
+    ignorecase = false
+    excludesfile = ~/.gitignore
 [alias]
-	co = checkout
+    co = checkout
     lg = lg1
     lg1 = lg1-specific --all
     lg2 = lg2-specific --all
@@ -17,10 +18,17 @@
     lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
     lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
     lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
-	setup-remotes = !git config remote.origin.fetch \"+refs/heads/*:refs/remotes/origin/*\" && git fetch origin
+    setup-remotes = !git config remote.origin.fetch \"+refs/heads/*:refs/remotes/origin/*\" && git fetch origin
 [advice]
-	addIgnoredFile = false
+    addIgnoredFile = false
 [push]
-	autoSetupRemote = true
+    autoSetupRemote = true
 [commit]
-  template = ~/.gitCommitMessageTemplate
+    template = ~/.gitCommitMessageTemplate
+    gpgSign = true
+[gpg]
+    format = ssh
+[tag]
+    forceSignAnnotated = true
+[gpg "ssh"]
+    allowedSignersFile = ~/.ssh/allowed_signers
