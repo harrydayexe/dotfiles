@@ -33,7 +33,6 @@ vim.keymap.set('n', '<leader>d]', vim.diagnostic.goto_next, { desc = 'Jump to ne
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
 require('mason').setup()
-require('mason-lspconfig').setup()
 
 local servers = {
     clangd = {},
@@ -75,22 +74,18 @@ require('neodev').setup()
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
--- Ensure the servers above are installed
-local mason_lspconfig = require 'mason-lspconfig'
+-- Configure each server, then let mason-lspconfig install and `vim.lsp.enable()` them.
+for server_name, settings in pairs(servers) do
+    vim.lsp.config(server_name, {
+        capabilities = capabilities,
+        on_attach = on_attach,
+        settings = settings,
+        filetypes = settings.filetypes,
+    })
+end
 
-mason_lspconfig.setup {
+require('mason-lspconfig').setup {
     ensure_installed = vim.tbl_keys(servers),
-}
-
-mason_lspconfig.setup_handlers {
-    function(server_name)
-        require('lspconfig')[server_name].setup {
-            capabilities = capabilities,
-            on_attach = on_attach,
-            settings = servers[server_name],
-            filetypes = (servers[server_name] or {}).filetypes,
-        }
-    end,
 }
 
 local sourcekitCapabilities = vim.lsp.protocol.make_client_capabilities()
@@ -101,14 +96,15 @@ sourcekitCapabilities.workspace = {
     },
 }
 
-require('lspconfig').pbls.setup {
+vim.lsp.config('pbls', {
     capabilities = capabilities,
     on_attach = on_attach,
-}
+})
+vim.lsp.enable('pbls')
 
 capabilities.offsetEncoding = { 'utf-16' }
 
-require("lspconfig").clangd.setup {
+vim.lsp.config('clangd', {
     capabilities = capabilities,
     on_attach = on_attach,
     cmd = {
@@ -117,7 +113,8 @@ require("lspconfig").clangd.setup {
         "--fallback-style=microsoft",
     },
     filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'proto' },
-}
+})
+vim.lsp.enable('clangd')
 
 vim.keymap.set('n', "<leader><leader>l", "<cmd>source ~/.config/nvim/after/plugin/lsp.lua<cr>",
     { desc = 'Reload [L]sp Settings' })
