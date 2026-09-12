@@ -215,6 +215,10 @@ agentic-down() {
   docker rm -f ${=ids}
 }
 
+agentic-restart() {
+  agentic-down && agentic-up
+}
+
 agentic() {
   local -x AGENTIC_GH_TOKEN
   AGENTIC_GH_TOKEN="$(agentic-token)" || return
