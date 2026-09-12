@@ -167,7 +167,7 @@ fi
 # The Fuck
 eval "$(thefuck --alias)"
 
-export SSH_ASKPASS=/Users/harryday/Developer/dotfiles/bin/ssh-askpass.sh
+export SSH_ASKPASS=~/bin/ssh-askpass.sh
 export SSH_ASKPASS_REQUIRE=force
 export DISPLAY=":0"
 
