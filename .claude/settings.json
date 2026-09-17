@@ -24,6 +24,7 @@
       "Bash(gh pr view:*)",
       "Bash(gh pr diff:*)",
       "Bash(gh issue view:*)",
+      "Bash(gh issue list:*)",
       "Bash(gh issue create:*)",
       "Bash(gh run view:*)",
       "Bash(git diff:*)",
@@ -35,7 +36,7 @@
       "mcp__gopls__*"
     ]
   },
-  "model": "opusplan",
+  "model": "opus",
   "hooks": {
     "Stop": [
       {
@@ -77,12 +78,20 @@
       }
     }
   },
+  "outputStyle": "Concise",
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
+  "modelSettings": {
+    "claude-opus-5": {
+      "effortLevel": "medium"
+    },
+    "claude-sonnet-5": {
+      "effortLevel": "medium"
+    }
+  },
   "autoUpdatesChannel": "stable",
   "disableAutoMode": "disable",
   "editorMode": "vim",
   "preferredNotifChannel": "iterm2_with_bell",
-  "agentPushNotifEnabled": true,
-  "outputStyle": "Concise"
+  "agentPushNotifEnabled": true
 }
