@@ -230,3 +230,12 @@ agentic() {
 }
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/Users/harryday/.opam/opam-init/init.zsh' ]] || source '/Users/harryday/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
