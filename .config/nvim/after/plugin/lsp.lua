@@ -102,6 +102,15 @@ vim.lsp.config('pbls', {
 })
 vim.lsp.enable('pbls')
 
+-- Installed via opam, not mason: `opam install ocaml-lsp-server ocamlformat`
+-- Formatting is handled by ocamllsp shelling out to ocamlformat, which needs a
+-- `.ocamlformat` file at the project root to do anything.
+vim.lsp.config('ocamllsp', {
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+vim.lsp.enable('ocamllsp')
+
 capabilities.offsetEncoding = { 'utf-16' }
 
 vim.lsp.config('clangd', {

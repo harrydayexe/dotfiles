@@ -1,6 +1,6 @@
 -- Defer Treesitter setup after first render to improve startup time of 'nvim {filename}'
 vim.defer_fn(function()
-    local ensure_installed = { 'c', 'cpp', 'go', 'helm', 'lua', 'markdown', 'markdown_inline', 'proto', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' }
+    local ensure_installed = { 'c', 'cpp', 'go', 'helm', 'lua', 'markdown', 'markdown_inline', 'ocaml', 'ocaml_interface', 'proto', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' }
     require('nvim-treesitter').install(ensure_installed)
 
     -- Highlighting/indent are no longer enabled via `nvim-treesitter.configs`;
