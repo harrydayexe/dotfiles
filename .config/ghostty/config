@@ -13,7 +13,7 @@ font-thicken = true
 # https://usgraphics.com/products/berkeley-mono
 # font-family = "JetBrainsMono Nerd Font Mono"
 
-macos-titlebar-style = tabs
+macos-titlebar-style = native
 macos-titlebar-proxy-icon = hidden
 
 # MacOS Secure Input is Buggy Currently
