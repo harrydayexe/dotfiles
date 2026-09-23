@@ -113,6 +113,7 @@ alias -g NE='2>/dev/null'
 alias ls='eza'
 alias l='eza -lah'
 alias vim='nvim'
+alias vimdiff='nvim -d'
 alias tree='tree -C --gitignore -a -I ".git"'
 alias cat='bat'
 
