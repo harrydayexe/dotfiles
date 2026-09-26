@@ -9,6 +9,8 @@
       "Bash(cat:*)",
       "Bash(ls:*)",
       "Bash(just:*)",
+      "Bash(~/.claude/skills/writing-justfiles/scripts/validate.sh:*)",
+      "Read(~/.claude/skills/**)",
       "Bash(tree:*)",
       "Bash(sed:*)",
       "Base(just:*)",
@@ -37,6 +39,7 @@
       "Bash(git status:*)",
       "Bash(git show:*)",
       "WebFetch(domain:github.com)",
+      "WebFetch(domain:docs.claude.com)",
       "WebSearch",
       "mcp__gopls__*"
     ]
@@ -63,6 +66,26 @@
           {
             "type": "command",
             "command": "~/.claude/hooks/block-go-modcache.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/justfile-skill-reminder.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/justfile-validate.sh"
           }
         ]
       }
