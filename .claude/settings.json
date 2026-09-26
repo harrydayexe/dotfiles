@@ -5,6 +5,10 @@
   "permissions": {
     "allow": [
       "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(cat:*)",
+      "Bash(ls:*)",
+      "Bash(just:*)",
       "Bash(tree:*)",
       "Bash(sed:*)",
       "Base(just:*)",
@@ -87,6 +91,9 @@
       "effortLevel": "medium"
     },
     "claude-sonnet-5": {
+      "effortLevel": "medium"
+    },
+    "claude-opus-5-5": {
       "effortLevel": "medium"
     }
   },

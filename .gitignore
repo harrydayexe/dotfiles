@@ -126,5 +126,6 @@ Temporary Items
 
 ClAUDE.local.md
 .claude/settings.local.json
+.claude/skills/synced/
 
 **/.claude/settings.local.json
