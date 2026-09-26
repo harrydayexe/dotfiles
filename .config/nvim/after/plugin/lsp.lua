@@ -58,7 +58,6 @@ local servers = {
         },
     },
     pyright = {},
-    rust_analyzer = {},
     tailwindcss = {
         filetypes = { 'html', 'css', 'scss', 'javascript', 'typescript', 'vue', 'svelte' },
     },
@@ -110,6 +109,20 @@ vim.lsp.config('ocamllsp', {
     on_attach = on_attach,
 })
 vim.lsp.enable('ocamllsp')
+
+-- Installed via rustup, not mason: `rustup component add rust-analyzer`
+-- Uses the rustup proxy by absolute path, as mason prepends its own bin dir to PATH.
+vim.lsp.config('rust_analyzer', {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    cmd = { vim.fn.expand('~/.cargo/bin/rust-analyzer') },
+    settings = {
+        ['rust-analyzer'] = {
+            check = { command = 'clippy' },
+        },
+    },
+})
+vim.lsp.enable('rust_analyzer')
 
 capabilities.offsetEncoding = { 'utf-16' }
 
