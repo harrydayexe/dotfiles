@@ -58,6 +58,7 @@ local servers = {
         },
     },
     pyright = {},
+    taplo = {},
     tailwindcss = {
         filetypes = { 'html', 'css', 'scss', 'javascript', 'typescript', 'vue', 'svelte' },
     },
