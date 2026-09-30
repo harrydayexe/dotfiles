@@ -31,6 +31,11 @@ vim.opt.splitright = true
 
 vim.opt.conceallevel = 1
 
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldtext = ""
+vim.opt.foldlevelstart = 99
+
 -- Colors are applied automatically based on user-defined highlight groups.
 -- There is no default value.
 vim.cmd.highlight('IndentLine guifg=#123456')
