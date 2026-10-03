@@ -19,7 +19,6 @@
     format = ssh
 [tag]
     forceSignAnnotated = true
-    gpgSign = true
 [gpg "ssh"]
     allowedSignersFile = ~/.ssh/allowed_signers
 [worktree]

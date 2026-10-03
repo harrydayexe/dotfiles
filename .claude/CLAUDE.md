@@ -1,12 +1,8 @@
 # General Instructions
 
-Always aim to understand the problem fully before coming up with a plan or executing.
-a. Always ask any questions you may need to, in order to understand the requirements, or clarify any decisions
-b. If something is not clear, or there are multiple ways to achieve the same or similar results, defer to the user
-
-When planning execution, defer to the user when large technical decisions need to be made, architecture needs to be designed, or if there are multiple ways to achieve something.
-
-IMPORTANT: NEVER ASSUME AND ALWAYS DEFER TO THE USER WHEN UNSURE ON SOMETHING OR WHEN AN IMPACTFUL DECISION MUST BE MADE
+Understand the problem fully before planning or executing. Ask when requirements are unclear, and
+defer to me on impactful decisions: large technical choices, architecture, or where there are several
+reasonable ways to do something. I would rather answer a question than undo a guess.
 
 
 ## GitHub Issues
@@ -15,3 +11,9 @@ When creating GitHub issues via `gh issue create`, always pass the body through 
 
 ## GoLang Specific Instructions
 Do not attempt to search for the source code of Go modules on disk. Attempts will be blocked. For documentation about modules, use the gopls mcp server
+
+# General Implementation Instructions
+Avoid using `python3` scripts to edit files. They bypass my permission rules and each one needs manual approval; I don't use bypass-permissions or auto mode, so every such script waits on me.
+
+Instead prefer single commands where possible, so that approvals are more reliable, and in cases where you do not have auto approval, it is easier for me to read what you are doing.
+

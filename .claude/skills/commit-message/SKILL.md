@@ -12,13 +12,11 @@ Generate a concise, well-formed commit message for the current uncommitted chang
 
 1. Run `git diff --staged` to see staged changes. If there are none, run `git diff` to see unstaged changes. If there are still none, check `git status` for untracked files and inform the user there is nothing to commit.
 
-2. Use the existing conversation context (what was changed and why, any GitHub issue numbers mentioned) instead of re-deriving it — do not run `git log`. If the commit resolves an issue mentioned in the conversation, include a `Closes #<number>` (or `Fixes #<number>`) footer.
+2. Use the existing conversation context (what was changed and why, any GitHub issue numbers mentioned) instead of re-deriving it — do not run `git log`.
 
 3. Analyse the diff and summarise the changes. Focus on the actual effect of the changes, not listing every specific item.
 
-4. Check the current conversation for any GitHub issue numbers the user mentioned working on. If any are present and the commit resolves that issue, include a `Closes #<number>` (or `Fixes #<number>`) footer.
-
-5. Write a commit message following the **Conventional Commits 1.0.0 specification**:
+4. Write a commit message following the **Conventional Commits 1.0.0 specification**:
 
    ### Format
    ```
@@ -47,6 +45,6 @@ Generate a concise, well-formed commit message for the current uncommitted chang
    ```
    Use `Fixes` instead of `Closes` if the issue is a bug fix.
 
-6. Output the final commit message inside a fenced code block so the user can copy it easily.
+5. Output the final commit message inside a fenced code block so the user can copy it easily.
 
-7. Do NOT run `git commit` unless the user explicitly asks you to.
+6. Do NOT run `git commit` unless the user explicitly asks you to.
