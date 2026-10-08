@@ -5,7 +5,11 @@
   },
   "permissions": {
     "allow": [
+      "LSP",
       "Bash(find:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(echo:*)",
       "Bash(grep:*)",
       "Bash(cat:*)",
       "Bash(ls:*)",

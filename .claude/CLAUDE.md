@@ -4,6 +4,11 @@ Understand the problem fully before planning or executing. Ask when requirements
 defer to me on impactful decisions: large technical choices, architecture, or where there are several
 reasonable ways to do something. I would rather answer a question than undo a guess.
 
+## Running Commands
+
+Use the Read, Grep and Glob tools to view and search files. Avoid variable substitution in commands intended to read or find files. This triggers approvals which are annoying for safe reads. 
+Stick to the basic commands and they will be approved straight away.
+
 
 ## GitHub Issues
 
