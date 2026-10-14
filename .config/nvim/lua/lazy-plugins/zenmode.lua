@@ -2,7 +2,7 @@ return {
     "folke/zen-mode.nvim",
     opts = {
         window = {
-            backdrop = 0.95, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
+            backdrop = 1, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
             -- height and width can be:
             -- * an absolute number of cells when > 1
             -- * a percentage of the width / height of the editor when <= 1
@@ -79,6 +79,9 @@ return {
         -- indentmini sets its own highlight namespace on each window it draws,
         -- which overrides zen's winhl=NormalFloat:Normal, so map it in that ns
         on_open = function(win)
+            -- some colorschemes (catppuccin, tokyonight) define their own ZenBg,
+            -- which overrides backdrop = 1, so force it back to Normal
+            vim.api.nvim_set_hl(0, 'ZenBg', { link = 'Normal' })
             local ns = vim.api.nvim_create_namespace('IndentLine')
             vim.api.nvim_set_hl(ns, 'NormalFloat', { link = 'Normal' })
         end,
