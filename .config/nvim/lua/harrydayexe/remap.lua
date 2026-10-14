@@ -34,6 +34,12 @@ vim.keymap.set("n", "Q", "<nop>")
 
 vim.keymap.set("n", "<leader>a", "<cmd>Alpha<CR>", { desc = 'Open [A]lpha Dashboard' })
 
+-- Theme Settings
+vim.keymap.set("n", "<leader>tz", "<cmd>ZenMode<CR>", { desc = 'Toggle [Z]enMode' })
+vim.keymap.set("n", "<leader>ti", "<cmd>IndentToggle<CR>", { desc = 'Toggle [I]ndent Guides' })
+vim.keymap.set("n", "<leader>tb", "<cmd>Twilight<CR>", { desc = 'Toggle Twilight [B]locks' })
+vim.keymap.set('n', '<Leader>tt', '<cmd>Themery<CR>', { desc = '[T]heme Switcher' })
+
 -- replace current word
 vim.keymap.set("n", "<leader>ec", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
     { desc = 'Replace [C]urrent Word' })

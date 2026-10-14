@@ -19,5 +19,3 @@ require("themery").setup({
     },
     livePreview = true,
 })
-
-vim.api.nvim_set_keymap('n', '<Leader>t', ':Themery<CR>', { desc = '[T]heme Switcher' })

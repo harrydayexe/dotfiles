@@ -29,4 +29,6 @@ require('which-key').add {
     { "<leader><leader>_", hidden = true },
     { "<leader>fo",        group = "Obsidian" },
     { "<leader>fo_",       hidden = true },
+    { "<leader>t",         group = "[T]heme" },
+    { "<leader>t_",        hidden = true },
 }
