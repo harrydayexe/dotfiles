@@ -36,12 +36,6 @@ vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldtext = ""
 vim.opt.foldlevelstart = 99
 
--- Colors are applied automatically based on user-defined highlight groups.
--- There is no default value.
-vim.cmd.highlight('IndentLine guifg=#123456')
--- Current indent line highlight
-vim.cmd.highlight('IndentLineCurrent guifg=#123456')
-
 vim.g.python3_host_prog = vim.fn.expand("~/.venv/nvim/bin/python")
 
 if vim.fn.getenv("TERM_PROGRAM") == "ghostty" then
