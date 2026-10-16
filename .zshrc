@@ -6,6 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Path setup
+typeset -U path
 PATH="/opt/homebrew/bin:$PATH"
 PATH="$(go env GOPATH)/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
@@ -49,7 +50,6 @@ zinit snippet OMZP::sudo
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
 zinit snippet OMZP::nvm
-zinit snippet OMZP::command-not-found
 
 # Load completions
 if type brew &>/dev/null
