@@ -27,8 +27,13 @@ local on_attach = function(_, bufnr)
 end
 
 vim.keymap.set('n', '<leader>dv', vim.diagnostic.open_float, { desc = '[V]iew diagnostics' })
-vim.keymap.set('n', '<leader>d[', vim.diagnostic.goto_prev, { desc = 'Jump to previous diagnostic' })
-vim.keymap.set('n', '<leader>d]', vim.diagnostic.goto_next, { desc = 'Jump to next diagnostic' })
+local function open_diagnostic_float(_, bufnr)
+    vim.diagnostic.open_float({ bufnr = bufnr, scope = 'cursor', focus = false })
+end
+vim.keymap.set('n', '<leader>d[', function() vim.diagnostic.jump({ count = -1, on_jump = open_diagnostic_float }) end,
+    { desc = 'Jump to previous diagnostic' })
+vim.keymap.set('n', '<leader>d]', function() vim.diagnostic.jump({ count = 1, on_jump = open_diagnostic_float }) end,
+    { desc = 'Jump to next diagnostic' })
 
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
