@@ -143,6 +143,19 @@ alias gwa='git worktree add'
 alias gwr='git worktree remove'
 alias gwl='git worktree list'
 
+# Fuzzy find and switch to a local or remote git branch
+fgc() {
+  local branch
+  branch=$(git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads refs/remotes/origin \
+    | grep -v '^origin$' \
+    | sed 's#^origin/##' \
+    | awk '!seen[$0]++' \
+    | fzf --height 40% --reverse --query="$*" --select-1 \
+        --preview 'git log --oneline --graph --color=always -20 {} 2>/dev/null || git log --oneline --graph --color=always -20 origin/{}') \
+    || return
+  git switch "$branch"
+}
+
 # Just aliases
 alias jl='just --list'
 alias jc='just --choose'
