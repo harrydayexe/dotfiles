@@ -1,6 +1,9 @@
 # VCS metadata
 \.git
 
+# macOS Finder metadata, at any depth
+\.DS_Store
+
 # Repo-only files (not for $HOME)
 ^/Brewfile$
 ^/Brewfile\.lock\.json$

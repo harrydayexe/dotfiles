@@ -22,8 +22,9 @@
 [gpg "ssh"]
     allowedSignersFile = ~/.ssh/allowed_signers
 [worktree]
-    useRelativePaths = true
     guessRemote = true
+[includeIf "gitdir:~/Developer/agentic/"]
+    path = ~/.config/git/agentic.gitconfig
 [alias]
     co = checkout
     lg = lg1
