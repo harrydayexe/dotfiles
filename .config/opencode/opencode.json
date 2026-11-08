@@ -1,0 +1,32 @@
+{
+  "provider": {
+    "omlx": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "oMLX",
+      "options": {
+        "baseURL": "http://127.0.0.1:8000/v1",
+        "apiKey": "omlx-17ol193g47jjqaxf"
+      },
+      "models": {
+        "Qwen3.6-35B-A3B": {
+          "name": "Qwen3.6-35B-A3B",
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "attachment": true,
+          "limit": {
+            "context": 262144,
+            "output": 32768
+          }
+        }
+      }
+    }
+  },
+  "model": "omlx/Qwen3.6-35B-A3B"
+}
