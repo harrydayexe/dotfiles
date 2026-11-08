@@ -1,8 +1,7 @@
+tap "anomalyco/tap"
 tap "getsentry/xcodebuildmcp"
-tap "krishkrosh/apps"
-tap "sass/sass"
-tap "siderolabs/tap"
-tap "theseal/ssh-askpass"
+tap "harrydayexe/tap"
+tap "jundot/omlx", "https://github.com/jundot/omlx"
 # Core application library for C
 brew "glib"
 # OpenType text shaping engine
@@ -95,10 +94,14 @@ brew "just"
 brew "k9s"
 # Subtitle renderer for the ASS/SSA subtitle format
 brew "libass"
+# Asynchronous event library
+brew "libev"
 # Library for reading RAW files from digital photo cameras
 brew "libraw"
 # Mac App Store command-line interface
 brew "mas"
+# Deep clean and optimize your Mac
+brew "mole"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf"
 # Open source relational database management system
@@ -107,6 +110,8 @@ brew "mysql@8.4"
 brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# OCaml package manager
+brew "opam"
 # Optimized BLAS library
 brew "openblas"
 # Development kit for the Java programming language
@@ -123,8 +128,6 @@ brew "pipx"
 brew "pngpaste"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Rust toolchain installer
-brew "rustup"
 # Generate type safe Go from SQL
 brew "sqlc"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
@@ -145,8 +148,8 @@ brew "thefuck"
 brew "tlrc"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
-# Validating, recursive, caching DNS resolver
-brew "unbound"
+# Parser generator tool
+brew "tree-sitter-cli"
 # Source code beautifier
 brew "uncrustify"
 # Extremely fast Python package installer and resolver, written in Rust
@@ -163,8 +166,12 @@ brew "xcodegen"
 brew "ykman"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
+# OpenCode V2 - the AI coding agent for the terminal
+brew "anomalyco/tap/opencode-v2", trusted: true
 # Model Context Protocol server for Xcode project workflows
 brew "getsentry/xcodebuildmcp/xcodebuildmcp", trusted: true
+# LLM inference server optimized for Apple Silicon
+brew "jundot/omlx/omlx", args: ["with-custom-kernel"]
 # Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
 # Compact TeX distribution as alternative to the full TeX Live / MacTeX
@@ -177,6 +184,8 @@ cask "claude-code@latest"
 cask "dbeaver-community"
 # Voice and text chat software
 cask "discord"
+# Web browser
+cask "firefox"
 cask "font-jetbrains-mono-nerd-font"
 # Set of tools to manage resources and applications hosted on Google Cloud
 cask "gcloud-cli"
@@ -194,6 +203,8 @@ cask "microsoft-teams"
 cask "mongodb-compass"
 # Unofficial desktop client for F1 TV
 cask "multiviewer"
+# Menu bar voice notes transcribed on-device and saved as Markdown
+cask "harrydayexe/tap/murmur", trusted: true
 # VPN client for secure internet access and private browsing
 cask "nordvpn"
 # Open-source software for live streaming and screen recording
@@ -229,24 +240,19 @@ cask "yubico-authenticator"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "Affinity Designer", id: 824171161
-mas "Balatro", id: 6502451661
 mas "Boop", id: 1518425043
-mas "Bridge Constructor+", id: 1587908263
 mas "Compressor", id: 424390742
 mas "CustomSymbols", id: 1566662030
 mas "Developer", id: 640199958
 mas "Final Cut Pro", id: 424389933
 mas "GarageBand", id: 682658836
-mas "Goodnotes", id: 1444383602
 mas "Hush", id: 1544743900
 mas "iMovie", id: 408981434
 mas "Keynote", id: 361285480
 mas "Logic Pro", id: 634148309
-mas "Mini Motorways", id: 1456188526
 mas "Motion", id: 434290957
 mas "Numbers", id: 361304891
 mas "Pages", id: 361309726
-mas "WHAT THE CAR?", id: 1534708672
 mas "WhatsApp", id: 310633997
 mas "Xcode", id: 497799835
 go "github.com/google/addlicense"
@@ -257,4 +263,8 @@ go "golang.org/x/tools/cmd/goimports"
 go "github.com/princjef/gomarkdoc/cmd/gomarkdoc"
 go "golang.org/x/tools/gopls"
 go "golang.org/x/vuln/cmd/govulncheck"
-npm "@devcontainers/cli"
+cargo "cargo-deny"
+cargo "htmx-lsp"
+cargo "marcasite-mcp"
+npm "corepack"
+npm "yarn"
