@@ -1,0 +1,3 @@
+[submodule ".config/bat/syntaxes/just_sublime"]
+	path = .config/bat/syntaxes/just_sublime
+	url = git@github.com:harrydayexe/just_sublime.git
